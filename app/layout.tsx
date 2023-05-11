@@ -12,7 +12,10 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <link rel="manifest" href="/manifest.json" />
+
+      {/* Hide overflow to disable pull-to-refresh */}
+      <body className="overflow-y-hidden">{children}</body>
     </html>
   );
 }
