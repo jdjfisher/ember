@@ -15,7 +15,9 @@ export default function RootLayout({ children }: Props) {
       <link rel="manifest" href="/manifest.json" />
 
       {/* Hide overflow to disable pull-to-refresh */}
-      <body className="overflow-y-hidden">{children}</body>
+      <body className="overflow-y-hidden max-w-sm mx-auto">
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
