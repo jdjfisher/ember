@@ -1,3 +1,5 @@
+import Card from '@/components/Card';
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col gap-5 p-5">
@@ -11,12 +13,10 @@ export default function Home() {
         <div className="h-7 w-7 bg-purple-300"></div>
       </section>
 
-      <section className="flex flex-1 items-end bg-purple-300 p-5 hover:animate-pulse">
-        <h2 className="text-3xl">
-          Lorem Ipsum
-          <br />
-          99
-        </h2>
+      <section className="relative flex-1 bg-purple-300">
+        {Array.from(Array(20).keys()).map(index => (
+          <Card index={index} key={index} />
+        ))}
       </section>
 
       <section className="flex justify-around">
