@@ -1,15 +1,15 @@
 {
-  "name": "PWA App",
-  "short_name": "App",
+  "name": "Ember",
+  "short_name": "Ember",
   "icons": [
     {
-      "src": "/icons/icon-225x225.png",
-      "sizes": "225x225",
+      "src": "/icons/logo_bg.png",
+      "sizes": "830x830",
       "type": "image/png"
     }
   ],
   "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "background_color": "#EE1F4D",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"

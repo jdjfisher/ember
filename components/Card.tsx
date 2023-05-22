@@ -24,7 +24,10 @@ export default function Card({ card }: Props) {
       swipeRequirementType={'velocity'}
       preventSwipe={['down']}
     >
-      <div className="flex h-full select-none flex-col justify-end p-5 text-white" style={style}>
+      <div
+        className="flex h-full select-none flex-col justify-end rounded-3xl p-5 text-white"
+        style={style}
+      >
         <span className="text-3xl capitalize">
           {card.name}, {card.age}
         </span>
