@@ -1,6 +1,12 @@
+'use client';
+
 import Card from '@/components/Card';
+import { profiles } from '@/lib/dummy';
+import { useState } from 'react';
 
 export default function Home() {
+  const [queue] = useState(profiles);
+
   return (
     <main className="flex min-h-screen flex-col gap-5 p-5">
       <section className="flex items-center justify-between">
@@ -14,8 +20,8 @@ export default function Home() {
       </section>
 
       <section className="relative flex-1 bg-purple-300">
-        {Array.from(Array(20).keys()).map(index => (
-          <Card index={index} key={index} />
+        {queue.map((card) => (
+          <Card card={card} key={card.name} />
         ))}
       </section>
 
