@@ -3,9 +3,22 @@ const lorem =
 
 const words = lorem.split(' ');
 
-export const profiles: ProfileCard[] = Array.from(Array(20).keys()).map((i) => ({
+export const profiles: Profile[] = Array.from(Array(10).keys()).map((i) => ({
+  id: i,
   imageUrl: `https://i.pravatar.cc/700?img=${i}`,
   name: words[i * 2],
   title: words[i * 2 + 1],
   age: 20 + (i ** 3 % 10),
+}));
+
+export const messages: Message[] = [
+  'foo lkjsh slkhjdsg',
+  'fgjklsf lkf',
+  'fdgdf',
+  'fdgjlhsfl lfkjg lsfdkjgh lsdkfjh lfdjkhg ldfsjhflj',
+  'dfklgjdfgkl; ;lkfj',
+].map((x, i) => ({
+  id: i,
+  sender_id: Math.random() > 0.7 ? 1 : 0,
+  text: x,
 }));

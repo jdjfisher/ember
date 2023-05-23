@@ -7,12 +7,12 @@ const TinderCard = dynamic(() => import('react-tinder-card'), {
 });
 
 interface Props {
-  card: ProfileCard;
+  profile: Profile;
 }
 
-export default function Card({ card }: Props) {
+export default function SwipeCard({ profile }: Props) {
   const style = {
-    backgroundImage: `url(${card.imageUrl})`,
+    backgroundImage: `url(${profile.imageUrl})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -29,9 +29,9 @@ export default function Card({ card }: Props) {
         style={style}
       >
         <span className="text-3xl capitalize">
-          {card.name}, {card.age}
+          {profile.name}, {profile.age}
         </span>
-        <span className="text-xl">{card.title}</span>
+        <span className="text-xl">{profile.title}</span>
       </div>
     </TinderCard>
   );
