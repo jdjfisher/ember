@@ -1,4 +1,4 @@
-interface Profile {
+export interface Profile {
   id: number;
   imageUrl: string;
   name: string;
@@ -6,12 +6,12 @@ interface Profile {
   age: number;
 }
 
-interface Message {
+export interface Message {
   sentByYou: boolean;
   text: string;
 }
 
-type ScriptedMessageThread = Array<
+export type ScriptedMessageThread = Array<
   | {
       type: 'message';
       text: string;
