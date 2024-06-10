@@ -1,18 +1,27 @@
 'use client';
 
-import { FormEventHandler } from 'react';
+import { FormEventHandler, useState } from 'react';
 import { IoMdSend } from 'react-icons/io';
 
-export default function MessageForm() {
-  const submit: FormEventHandler = (event) => {
-    event.preventDefault();
-    console.log(event);
+interface Props {
+  onMessage: (message: string) => void;
+}
+
+export default function MessageForm({ onMessage }: Props) {
+  const [text, setText] = useState('');
+
+  const onSubmit: FormEventHandler = (e) => {
+    e.preventDefault();
+    onMessage(text);
+    setText('');
   };
 
   return (
-    <form className="flex  items-center gap-2" onSubmit={submit}>
+    <form className="flex items-center gap-2" onSubmit={onSubmit}>
       <input
         type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
         className="w-full rounded-xl border-2 border-red-200 p-2"
         placeholder="Type a message..."
       />

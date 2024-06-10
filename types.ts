@@ -7,7 +7,19 @@ interface Profile {
 }
 
 interface Message {
-  id: number;
-  sender_id: number;
+  sentByYou: boolean;
   text: string;
 }
+
+type ScriptedMessageThread = Array<
+  | {
+      type: 'message';
+      text: string;
+    }
+  | {
+      type: 'delay';
+      duration: number;
+      typing: boolean;
+    }
+  | 'prompt'
+>;
