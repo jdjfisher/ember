@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { Profile } from '@/types';
 
 const TinderCard = dynamic(() => import('react-tinder-card'), {
   ssr: false,

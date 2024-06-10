@@ -1,5 +1,7 @@
+import { Message as MessageI } from '@/types';
+
 interface Props {
-  message: Message;
+  message: MessageI;
 }
 
 export default function Message({ message }: Props) {
