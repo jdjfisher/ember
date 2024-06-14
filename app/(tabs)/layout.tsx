@@ -1,6 +1,4 @@
-import SwipeCard from '@/components/SwipeCard';
 import NavTabs from '@/components/NavTabs';
-import { profiles } from '@/lib/dummy';
 import { FiMenu } from 'react-icons/fi';
 import Image from 'next/image';
 
