@@ -5,12 +5,13 @@ const lorem =
 
 const words = lorem.split(' ');
 
-export const profiles: Profile[] = Array.from(Array(10).keys()).map((i) => ({
+export const profiles: Profile[] = [1, 5, 9, 10].reverse().map((i) => ({
   id: i,
   imageUrl: `https://i.pravatar.cc/700?img=${i}`,
   name: words[i * 2],
   title: words[i * 2 + 1],
   age: 20 + (i ** 3 % 10),
+  swipedRight: i % 2 === 0,
 }));
 
 export const messageThread: ScriptedMessageThread = [

@@ -4,6 +4,7 @@ export interface Profile {
   name: string;
   title: string;
   age: number;
+  swipedRight: boolean;
 }
 
 export interface Message {

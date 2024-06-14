@@ -19,11 +19,27 @@ export default function SwipeCard({ profile }: Props) {
     backgroundPosition: 'center',
   };
 
+  function onSwipe(direction: string) {
+    if (!profile.swipedRight) {
+      return;
+    }
+
+    switch (direction) {
+      case 'right':
+        alert('Match!');
+        break;
+      case 'left':
+        alert('Missed!');
+        break;
+    }
+  }
+
   return (
     <TinderCard
       className="absolute h-full w-full"
-      swipeRequirementType={'velocity'}
+      swipeRequirementType={'position'}
       preventSwipe={['down']}
+      onSwipe={onSwipe}
     >
       <div
         className="flex h-full select-none flex-col justify-end rounded-3xl p-5 text-white"
