@@ -1,3 +1,5 @@
+import { Profile, ScriptedMessageThread } from '@/types';
+
 const lorem =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit Nulla sequi iusto expedita iste doloribus quos natus nam sit hic perspiciatis illo temporibus Expedita aliquam et molestias quidem ipsum Quo assumenda ipsum Quia et ratione veniam iste illo similique accusamus vel voluptatum voluptas perspiciatis consequuntur voluptates recusandae vitae blanditiis repellendus odio';
 
@@ -11,14 +13,25 @@ export const profiles: Profile[] = Array.from(Array(10).keys()).map((i) => ({
   age: 20 + (i ** 3 % 10),
 }));
 
-export const messages: Message[] = [
-  'foo lkjsh slkhjdsg',
-  'fgjklsf lkf',
-  'fdgdf',
-  'fdgjlhsfl lfkjg lsfdkjgh lsdkfjh lfdjkhg ldfsjhflj',
-  'dfklgjdfgkl; ;lkfj',
-].map((x, i) => ({
-  id: i,
-  sender_id: Math.random() > 0.7 ? 1 : 0,
-  text: x,
-}));
+export const messageThread: ScriptedMessageThread = [
+  { type: 'delay', duration: 1000, typing: true },
+  { type: 'message', text: 'How are you?' },
+  'prompt',
+  { type: 'delay', duration: 1000, typing: false },
+  { type: 'delay', duration: 1500, typing: true },
+  { type: 'message', text: 'I am a bot.' },
+  { type: 'delay', duration: 1500, typing: true },
+  { type: 'message', text: 'I am here to help you.' },
+  { type: 'delay', duration: 1500, typing: true },
+  { type: 'message', text: 'What can I do for you?' },
+  'prompt',
+  'prompt',
+  { type: 'delay', duration: 1500, typing: false },
+  { type: 'delay', duration: 3000, typing: true },
+  { type: 'message', text: 'I am sorry, I did not understand that.' },
+  { type: 'delay', duration: 1500, typing: true },
+  { type: 'message', text: 'Can you please repeat that?' },
+  'prompt',
+  { type: 'delay', duration: 500, typing: true },
+  { type: 'message', text: 'Goodbye!' },
+];

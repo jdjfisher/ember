@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import dayjs from 'dayjs';
+import { Profile } from '@/types';
 
 interface Props {
   profile: Profile;

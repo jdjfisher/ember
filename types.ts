@@ -1,4 +1,4 @@
-interface Profile {
+export interface Profile {
   id: number;
   imageUrl: string;
   name: string;
@@ -6,8 +6,20 @@ interface Profile {
   age: number;
 }
 
-interface Message {
-  id: number;
-  sender_id: number;
+export interface Message {
+  sentByYou: boolean;
   text: string;
 }
+
+export type ScriptedMessageThread = Array<
+  | {
+      type: 'message';
+      text: string;
+    }
+  | {
+      type: 'delay';
+      duration: number;
+      typing: boolean;
+    }
+  | 'prompt'
+>;
