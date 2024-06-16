@@ -13,7 +13,7 @@ export default function SwipeCard({ profile }: Props) {
   return (
     <Link href={`/chats/${profile.id}`} className="flex  items-center gap-4 px-5 py-3">
       <Image
-        src={profile.imageUrl}
+        src={profile.imageUrls[0]!}
         alt={profile.name}
         height={64}
         width={64}

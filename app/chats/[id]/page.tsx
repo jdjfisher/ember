@@ -65,7 +65,7 @@ export default function Chat({ params }: any) {
         </Link>
 
         <Image
-          src={profile.imageUrl}
+          src={profile.imageUrls[0]!}
           alt={profile.name}
           height={32}
           width={32}
