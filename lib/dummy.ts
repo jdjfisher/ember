@@ -7,7 +7,11 @@ const words = lorem.split(' ');
 
 export const profiles: Profile[] = [1, 5, 9, 10].reverse().map((i) => ({
   id: i,
-  imageUrl: `https://i.pravatar.cc/700?img=${i}`,
+  imageUrls: [
+    `https://i.pravatar.cc/700?img=${i}`,
+    `https://i.pravatar.cc/200?img=${i}`,
+    `https://i.pravatar.cc/50?img=${i}`,
+  ],
   name: words[i * 2],
   title: words[i * 2 + 1],
   age: 20 + (i ** 3 % 10),

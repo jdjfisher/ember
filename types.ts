@@ -1,6 +1,6 @@
 export interface Profile {
   id: number;
-  imageUrl: string;
+  imageUrls: string[];
   name: string;
   title: string;
   age: number;
