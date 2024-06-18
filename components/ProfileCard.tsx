@@ -46,10 +46,13 @@ export function ProfileCard({ profile }: Props) {
           ))}
       </div>
 
-      <div>
+      <div className="grid grid-cols-2 items-baseline">
         <div className="space-x-2 text-3xl capitalize">
-          <span className="font-semibold">{profile.name}</span>
+          <span className="font-semibold">{profile.name},</span>
           <span>{profile.age}</span>
+        </div>
+        <div className="text-right align-bottom text-xl italic">
+          <p>{profile.distance} miles away</p>
         </div>
         <div className="text-xl">{profile.title}</div>
       </div>

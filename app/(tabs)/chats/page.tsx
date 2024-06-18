@@ -9,7 +9,7 @@ export default function Chats() {
       <section className="space-y-5 p-5">
         <h1 className="font-bold">Chats</h1>
 
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Don't keep your matches waiting!</p>
       </section>
 
       <section>
