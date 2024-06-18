@@ -7,7 +7,7 @@ interface Props {
   profile: Profile;
 }
 
-export default function SwipeCard({ profile }: Props) {
+export default function ChatCard({ profile }: Props) {
   const timestamp = dayjs().format('HH:mm');
 
   return (
