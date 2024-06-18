@@ -7,7 +7,7 @@ export interface Profile {
   swipedRight?: boolean;
   livesIn: string;
   distance?: number;
-  interests: string[];
+  interests: string[]; // max 4?
   aboutMe: string;
 }
 

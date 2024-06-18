@@ -1,5 +1,8 @@
 import { Profile } from '@/types';
 import { MouseEventHandler, useState } from 'react';
+import { FaHouseUser } from 'react-icons/fa';
+import { TbWriting } from 'react-icons/tb';
+import { MdInterests } from 'react-icons/md';
 
 interface Props {
   profile: Profile;
@@ -28,7 +31,7 @@ export function ProfileDetail({ profile }: Props) {
   };
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-2">
       <div
         className="flex h-full select-none flex-col justify-between rounded-3xl border-2 p-4 text-white"
         onClick={onClick}
@@ -54,23 +57,44 @@ export function ProfileDetail({ profile }: Props) {
           </div>
         </div>
       </div>
-      <div>
-        <h1 className="font-bold">Short bio</h1>
-        <div className="text-l">{profile.title}</div>
+
+      <div className="flex flex-row space-x-2">
+        <div>
+          <FaHouseUser size={25} />
+        </div>
+        <div>{profile.livesIn}</div>
       </div>
-      <div>
-        {profile.livesIn}
-        {profile.distance}
+
+      <div className="flex flex-row space-x-2">
+        <div>
+          <TbWriting size={25} />
+        </div>
+        <div>
+          <h1 className="font-bold">About me</h1>
+        </div>
       </div>
+
       <div>
-        <h1 className="font-bold">About me</h1>
+        <div>{profile.title}</div>
         <div>{profile.aboutMe}</div>
       </div>
-      <div>
-        <h1 className="font-bold">Interests</h1>
-        <div>{profile.interests}</div>
+
+      <div className="flex flex-row space-x-2">
+        <div>
+          <MdInterests size={25} />
+        </div>
+        <div>
+          <h1 className="font-bold">Interests</h1>
+        </div>
       </div>
-      <div>Edit profile</div>
+
+      <div>
+        <div className="flex flex-row space-x-3">
+          {profile.interests.map((item) => (
+            <div className="rounded border-2 p-1">{item}</div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
