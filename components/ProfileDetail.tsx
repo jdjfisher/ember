@@ -91,7 +91,9 @@ export function ProfileDetail({ profile }: Props) {
       <div>
         <div className="flex flex-row space-x-3">
           {profile.interests.map((item) => (
-            <div className="rounded border-2 p-1">{item}</div>
+            <div className="rounded border-2 p-1" key={item}>
+              {item}
+            </div>
           ))}
         </div>
       </div>
