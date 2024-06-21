@@ -6,7 +6,7 @@ import { BiArrowBack } from 'react-icons/bi';
 import { BsThreeDots } from 'react-icons/bs';
 import Link from 'next/link';
 
-export default function Chat({ params }: any) {
+export default function Profile({ params }: any) {
   const id = params?.id;
 
   const profile = profiles.find((profile) => profile.id == id)!;
