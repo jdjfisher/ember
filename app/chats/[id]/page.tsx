@@ -64,16 +64,18 @@ export default function Chat({ params }: any) {
           <BiArrowBack size={24} />
         </Link>
 
-        <Image
-          src={profile.imageUrls[0]!}
-          alt={profile.name}
-          height={32}
-          width={32}
-          className="rounded-full"
-        />
-
-        <h2>{profile.name}</h2>
-
+        <Link href={`/profiles/${profile.id}`}>
+          <Image
+            src={profile.imageUrls[0]!}
+            alt={profile.name}
+            height={32}
+            width={32}
+            className="rounded-full"
+          />
+        </Link>
+        <Link href={`/profiles/${profile.id}`}>
+          <h2>{profile.name}</h2>
+        </Link>
         <BsThreeDots size={24} className="ml-auto" />
       </div>
 

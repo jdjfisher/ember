@@ -1,5 +1,6 @@
 import { Profile } from '@/types';
 import { MouseEventHandler, useState } from 'react';
+import Link from 'next/link';
 
 interface Props {
   profile: Profile;
@@ -46,10 +47,15 @@ export function ProfileCard({ profile }: Props) {
           ))}
       </div>
 
-      <div>
-        <div className="space-x-2 text-3xl capitalize">
-          <span className="font-semibold">{profile.name}</span>
-          <span>{profile.age}</span>
+      <div className="grid grid-cols-2 items-baseline">
+        <Link href={`/profiles/${profile.id}`}>
+          <div className="space-x-2 text-3xl capitalize">
+            <span className="font-semibold">{profile.name},</span>
+            <span>{profile.age}</span>
+          </div>
+        </Link>
+        <div className="text-right align-bottom text-xl italic">
+          <p>{profile.distance} miles away</p>
         </div>
         <div className="text-xl">{profile.title}</div>
       </div>

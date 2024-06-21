@@ -4,7 +4,11 @@ export interface Profile {
   name: string;
   title: string;
   age: number;
-  swipedRight: boolean;
+  swipedRight?: boolean;
+  livesIn: string;
+  distance?: number;
+  interests: string[]; // max 4?
+  aboutMe: string;
 }
 
 export interface Message {

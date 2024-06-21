@@ -1,6 +1,6 @@
 import { Profile, ScriptedMessageThread } from '@/types';
 
-const lorem =
+export const lorem =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit Nulla sequi iusto expedita iste doloribus quos natus nam sit hic perspiciatis illo temporibus Expedita aliquam et molestias quidem ipsum Quo assumenda ipsum Quia et ratione veniam iste illo similique accusamus vel voluptatum voluptas perspiciatis consequuntur voluptates recusandae vitae blanditiis repellendus odio';
 
 const words = lorem.split(' ');
@@ -16,6 +16,10 @@ export const profiles: Profile[] = [1, 5, 9, 10].reverse().map((i) => ({
   title: words[i * 2 + 1],
   age: 20 + (i ** 3 % 10),
   swipedRight: i % 2 === 0,
+  livesIn: words[i * 5],
+  distance: 20 + (i ** 3 % 10) - 3,
+  interests: [words[3], words[4], words[10]],
+  aboutMe: lorem,
 }));
 
 export const messageThread: ScriptedMessageThread = [
