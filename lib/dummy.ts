@@ -1,26 +1,15 @@
 import { Profile, ScriptedMessageThread } from '@/types';
+import { ProfileHussain } from './Hussain';
+import { ProfileAmelia } from './Amelia';
 
 export const lorem =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit Nulla sequi iusto expedita iste doloribus quos natus nam sit hic perspiciatis illo temporibus Expedita aliquam et molestias quidem ipsum Quo assumenda ipsum Quia et ratione veniam iste illo similique accusamus vel voluptatum voluptas perspiciatis consequuntur voluptates recusandae vitae blanditiis repellendus odio';
 
 const words = lorem.split(' ');
 
-export const profiles: Profile[] = [1, 5, 9, 10].reverse().map((i) => ({
-  id: i,
-  imageUrls: [
-    `https://i.pravatar.cc/700?img=${i}`,
-    `https://i.pravatar.cc/200?img=${i}`,
-    `https://i.pravatar.cc/50?img=${i}`,
-  ],
-  name: words[i * 2],
-  title: words[i * 2 + 1],
-  age: 20 + (i ** 3 % 10),
-  swipedRight: i % 2 === 0,
-  livesIn: words[i * 5],
-  distance: 20 + (i ** 3 % 10) - 3,
-  interests: [words[3], words[4], words[10]],
-  aboutMe: lorem,
-}));
+export const profiles: Profile[] = [ProfileHussain];
+
+export const profilesToSwipe: Profile[] = [ProfileAmelia];
 
 export const messageThread: ScriptedMessageThread = [
   { type: 'delay', duration: 1000, typing: true },

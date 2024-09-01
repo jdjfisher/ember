@@ -23,7 +23,7 @@ export default function ChatCard({ profile }: Props) {
       <div className="w-full">
         <div className="font-bold">{profile.name}</div>
         <div className="flex items-end justify-between text-gray-500">
-          <span>{profile.name}</span>
+          <span>{profile.age}</span>
           <span className="text-xs">{timestamp}</span>
         </div>
       </div>

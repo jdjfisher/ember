@@ -9,6 +9,7 @@ export interface Profile {
   distance?: number;
   interests: string[]; // max 4?
   aboutMe: string;
+  chat?: ScriptedMessageThread;
 }
 
 export interface Message {
@@ -19,6 +20,10 @@ export interface Message {
 export type ScriptedMessageThread = Array<
   | {
       type: 'message';
+      text: string;
+    }
+  | {
+      type: 'userMessage';
       text: string;
     }
   | {
