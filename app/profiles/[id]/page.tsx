@@ -22,7 +22,7 @@ export default function Profile({ params }: any) {
       </div>
 
       <hr />
-      <div className="flex h-full overflow-y-scroll p-5">
+      <div className="p-5">
         <ProfileDetail profile={profile} />
       </div>
     </div>
