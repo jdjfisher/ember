@@ -76,7 +76,7 @@ export function ProfileDetail({ profile }: Props) {
 
       <div>
         <div>{profile.title}</div>
-        <div>{profile.aboutMe}</div>
+        <div className="whitespace-pre-line">{profile.aboutMe}</div>
       </div>
 
       <div className="flex flex-row space-x-2">

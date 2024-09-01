@@ -9,5 +9,5 @@ export const userProfile: Profile = {
   age: 25,
   livesIn: 'London',
   interests: ['TV Shows', 'Cooking', 'Football', 'Music'],
-  aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.', // why does the new line not work :(
+  aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.',
 };
