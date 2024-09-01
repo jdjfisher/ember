@@ -14,9 +14,11 @@ export default function RootLayout({ children }: Props) {
     <html lang="en">
       <link rel="manifest" href="/manifest.json" />
 
-      {/* Hide overflow to disable pull-to-refresh */}
-      <body className="mx-auto max-w-sm overflow-x-hidden overflow-y-hidden">
-        <main className="flex min-h-screen flex-col justify-between">{children}</main>
+      <body className="mx-auto max-w-sm grid items-center h-screen overflow-x-hidden">
+        {/* Hide overflow to disable pull-to-refresh */}
+        <main className="flex max-h-[60rem] h-full flex-col justify-between overflow-y-hidden">
+          {children}
+        </main>
       </body>
     </html>
   );
