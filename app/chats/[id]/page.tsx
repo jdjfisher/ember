@@ -32,7 +32,7 @@ export default function Chat({ params }: any) {
   }
 
   useEffect(() => {
-    const currentScriptAction = messageThread[scriptIndex];
+    const currentScriptAction = profile.chat![scriptIndex];
 
     if (!currentScriptAction || currentScriptAction === 'prompt') {
       return;
@@ -40,6 +40,10 @@ export default function Chat({ params }: any) {
 
     if (currentScriptAction.type === 'message') {
       addMessage({ text: currentScriptAction.text, sentByYou: false });
+    }
+
+    if (currentScriptAction.type === 'userMessage') {
+      addMessage({ text: currentScriptAction.text, sentByYou: true });
     }
 
     if (currentScriptAction.type === 'delay') {

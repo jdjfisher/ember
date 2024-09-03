@@ -31,9 +31,9 @@ export function ProfileDetail({ profile }: Props) {
   };
 
   return (
-    <div className="space-y-2">
+    <div className="h-full gap-2 flex flex-col">
       <div
-        className="flex h-full select-none flex-col justify-between rounded-3xl border-2 p-4 text-white"
+        className="flex-1 select-none justify-between rounded-3xl border-2 p-4 text-white"
         onClick={onClick}
         style={style}
       >
@@ -76,7 +76,7 @@ export function ProfileDetail({ profile }: Props) {
 
       <div>
         <div>{profile.title}</div>
-        <div>{profile.aboutMe}</div>
+        <div className="whitespace-pre-line">{profile.aboutMe}</div>
       </div>
 
       <div className="flex flex-row space-x-2">

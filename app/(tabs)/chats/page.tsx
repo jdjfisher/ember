@@ -1,8 +1,9 @@
 import ChatCard from '@/components/ChatCard';
+import { ProfileHussain } from '@/lib/Hussain';
 import { profiles } from '@/lib/dummy';
 
 export default function Chats() {
-  const subset = profiles.filter((profile) => profile.id < 5);
+  const subset = [ProfileHussain];
 
   return (
     <div>
