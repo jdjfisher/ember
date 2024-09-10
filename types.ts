@@ -15,16 +15,19 @@ export interface Profile {
 export interface Message {
   sentByYou: boolean;
   text: string;
+  timestamp?: string;
 }
 
 export type ScriptedMessageThread = Array<
   | {
       type: 'message';
       text: string;
+      timestamp?: string;
     }
   | {
       type: 'userMessage';
       text: string;
+      timestamp?: string;
     }
   | {
       type: 'delay';

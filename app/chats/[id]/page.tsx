@@ -42,11 +42,19 @@ export default function Chat({ params }: any) {
     }
 
     if (currentScriptAction.type === 'message') {
-      addMessage({ text: currentScriptAction.text, sentByYou: false });
+      addMessage({
+        text: currentScriptAction.text,
+        sentByYou: false,
+        timestamp: currentScriptAction.timestamp,
+      });
     }
 
     if (currentScriptAction.type === 'userMessage') {
-      addMessage({ text: currentScriptAction.text, sentByYou: true });
+      addMessage({
+        text: currentScriptAction.text,
+        sentByYou: true,
+        timestamp: currentScriptAction.timestamp,
+      });
     }
 
     if (currentScriptAction.type === 'delay') {

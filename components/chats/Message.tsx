@@ -10,5 +10,10 @@ export default function Message({ message }: Props) {
     message.sentByYou ? 'bg-red-400 ml-auto' : 'bg-red-200',
   ].join(' ');
 
-  return <div className={className}>{message.text}</div>;
+  return (
+    <div>
+      {message.timestamp && <div className="text-center text-gray-500">{message.timestamp}</div>}
+      <div className={className}>{message.text}</div>
+    </div>
+  );
 }

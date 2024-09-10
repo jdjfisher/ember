@@ -1,7 +1,7 @@
 import { ScriptedMessageThread } from '@/types';
 
 export const hussainMessages: ScriptedMessageThread = [
-  { type: 'message', text: 'Only looking to bottom really :/' },
+  { type: 'message', text: 'Only looking to bottom really :/' , timestamp: "Today 3:31 AM"},
   { type: 'message', text: 'U?' },
   'prompt',
   { type: 'userMessage', text: "I'm easy. Just want to meet ASAP" },
@@ -10,7 +10,7 @@ export const hussainMessages: ScriptedMessageThread = [
   { type: 'delay', duration: 1500, typing: true },
   {
     type: 'message',
-    text: 'Hey, am I still coming over or are you still hanging out with that guy today?',
+    text: 'Hey, am I still coming over or are you still hanging out with that guy today?', timestamp: "Yesterday 6:14 PM",
   },
   'prompt',
   {
