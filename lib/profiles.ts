@@ -22,7 +22,7 @@ export const amelia: Profile = {
   name: 'Amelia',
   title: '',
   age: 24,
-  swipedRight: false,
+  swipedRight: true,
   livesIn: 'London',
   distance: 12,
   interests: ['i', 'd', 'k'],
