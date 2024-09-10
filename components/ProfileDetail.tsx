@@ -1,7 +1,6 @@
 import { Profile } from '@/types';
 import { MouseEventHandler, useState } from 'react';
 import { FaHouseUser } from 'react-icons/fa';
-import { TbWriting } from 'react-icons/tb';
 import { MdInterests } from 'react-icons/md';
 
 interface Props {
