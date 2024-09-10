@@ -1,6 +1,6 @@
 import { Profile, ScriptedMessageThread } from '@/types';
 
-export const messagesHussain: ScriptedMessageThread = [
+const messages: ScriptedMessageThread = [
   { type: 'message', text: 'Only looking to bottom really :/' },
   { type: 'message', text: 'U?' },
   { type: 'userMessage', text: "I'm easy. Just want to meet ASAP" },
@@ -42,5 +42,5 @@ export const profileHussain: Profile = {
   distance: 5,
   interests: ['i', 'd', 'k'],
   aboutMe: 'hi:)',
-  chat: messagesHussain,
+  chat: messages,
 };
