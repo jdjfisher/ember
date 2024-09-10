@@ -31,7 +31,7 @@ export function ProfileDetail({ profile }: Props) {
   };
 
   return (
-    <div className="h-full gap-2 flex flex-col">
+    <div className="flex h-full flex-col gap-2">
       <div
         className="flex-1 select-none justify-between rounded-3xl border-2 p-4 text-white"
         onClick={onClick}
@@ -42,19 +42,19 @@ export function ProfileDetail({ profile }: Props) {
             profile.imageUrls.map((_, index) => (
               <div
                 key={index}
-                className={`inline-block h-2 w-full rounded-full  ${
+                className={`inline-block h-1 w-full rounded-full  ${
                   index === imageIndex ? 'bg-white' : 'bg-gray-700 opacity-60'
                 }`}
                 onClick={() => setImageIndex(index)}
               />
             ))}
         </div>
+      </div>
 
-        <div>
-          <div className="space-x-2 text-3xl capitalize">
-            <span className="font-semibold">{profile.name}</span>
-            <span>{profile.age}</span>
-          </div>
+      <div>
+        <div className="space-x-2 text-3xl capitalize">
+          <span className="font-bold">{profile.name}</span>
+          <span>{profile.age}</span>
         </div>
       </div>
 
@@ -65,13 +65,8 @@ export function ProfileDetail({ profile }: Props) {
         <div>{profile.livesIn}</div>
       </div>
 
-      <div className="flex flex-row space-x-2">
-        <div>
-          <TbWriting size={25} />
-        </div>
-        <div>
-          <h1 className="font-bold">About me</h1>
-        </div>
+      <div>
+        <h1 className="text-2xl font-bold">About me</h1>
       </div>
 
       <div>

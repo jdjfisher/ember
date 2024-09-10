@@ -23,7 +23,7 @@ export default function MessageForm({ onMessage }: Props) {
         value={text}
         onChange={(e) => setText(e.target.value)}
         className="w-full rounded-xl border-2 border-red-200 p-2"
-        placeholder="Type a message..."
+        placeholder="Send a message..."
       />
 
       <button type="submit">
