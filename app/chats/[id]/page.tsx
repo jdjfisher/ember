@@ -92,7 +92,7 @@ export default function Chat({ params }: any) {
         {isTyping && <Typing />}
       </div>
 
-      <section className="absolute bottom-5 left-0 w-full">
+      <section className="absolute bottom-5 left-0 w-full px-2">
         <MessageForm onMessage={onMessage} />
       </section>
     </div>
