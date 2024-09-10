@@ -1,5 +1,4 @@
 import NavTabs from '@/components/NavTabs';
-import { FiMenu } from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,14 +9,14 @@ interface Props {
 export default function TabLayout({ children }: Props) {
   return (
     <>
-      <section className="flex items-center justify-between p-3">
-        <Link href="settings">
-          <FiMenu size={32} />
+      <section className="grid grid-cols-3 items-center p-3">
+        <h1 className="select-none text-center col-start-2 text-lg font-bold text-[#EE1F4D] items-start">
+          Ember
+        </h1>
+
+        <Link href="settings" className=" ml-auto">
+          <Image src="/icons/logo.png" alt="logo" width={35} height={35} />
         </Link>
-
-        <h1 className="select-none text-lg font-bold text-[#EE1F4D]">Ember</h1>
-
-        <Image src="/icons/logo.png" alt="logo" width={35} height={35} />
       </section>
 
       <section className="flex flex-1">{children}</section>
