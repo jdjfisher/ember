@@ -62,7 +62,7 @@ export default function Chat({ params }: any) {
   }, [scriptIndex]);
 
   return (
-    <div className="space-y-2 p-3">
+    <div className="space-y-2 p-3 relative h-full">
       <div className="flex items-center gap-4">
         <Link href="/chats">
           <BiArrowBack size={24} />
@@ -92,7 +92,7 @@ export default function Chat({ params }: any) {
         {isTyping && <Typing />}
       </div>
 
-      <section className="fixed bottom-5">
+      <section className="absolute bottom-5 w-full left-0">
         <MessageForm onMessage={onMessage} />
       </section>
     </div>
