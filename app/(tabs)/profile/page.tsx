@@ -5,7 +5,7 @@ import { ProfileDetail } from '@/components/ProfileDetail';
 
 export default function Profile() {
   return (
-    <div className="p-5">
+    <div className="p-5 w-full">
       <ProfileDetail profile={hugo} />
     </div>
   );
