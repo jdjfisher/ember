@@ -1,6 +1,6 @@
 'use client';
 
-import { chatProfiles } from '@/lib/dummy';
+import { chatProfiles } from '@/lib/profiles';
 import { ProfileDetail } from '@/components/ProfileDetail';
 import { BiArrowBack } from 'react-icons/bi';
 import { BsThreeDots } from 'react-icons/bs';

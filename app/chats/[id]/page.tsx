@@ -4,7 +4,7 @@ import Message from '@/components/chats/Message';
 import MessageForm from '@/components/chats/MessageForm';
 import { BiArrowBack } from 'react-icons/bi';
 import { BsThreeDots } from 'react-icons/bs';
-import { chatProfiles } from '@/lib/dummy';
+import { chatProfiles } from '@/lib/profiles';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';

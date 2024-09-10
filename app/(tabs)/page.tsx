@@ -1,7 +1,7 @@
 'use client';
 
 import SwipeCard from '@/components/SwipeCard';
-import { profilesToSwipe } from '@/lib/dummy';
+import { profilesToSwipe } from '@/lib/profiles';
 
 export default function Home() {
   return (

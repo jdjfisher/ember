@@ -1,5 +1,5 @@
 import ChatCard from '@/components/ChatCard';
-import { chatProfiles } from '@/lib/dummy';
+import { chatProfiles } from '@/lib/profiles';
 
 export default function Chats() {
   return (
