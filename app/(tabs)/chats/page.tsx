@@ -1,10 +1,7 @@
 import ChatCard from '@/components/ChatCard';
-import { ProfileHussain } from '@/lib/Hussain';
-import { profiles } from '@/lib/dummy';
+import { chatProfiles } from '@/lib/dummy';
 
 export default function Chats() {
-  const subset = [ProfileHussain];
-
   return (
     <div>
       <section className="space-y-5 p-5">
@@ -14,7 +11,7 @@ export default function Chats() {
       </section>
 
       <section>
-        {subset.map((profile) => (
+        {chatProfiles.map((profile) => (
           <ChatCard profile={profile} key={profile.name} />
         ))}
       </section>

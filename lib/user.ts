@@ -1,5 +1,4 @@
 import { Profile } from '@/types';
-import { lorem } from './dummy';
 
 export const userProfile: Profile = {
   id: 0,

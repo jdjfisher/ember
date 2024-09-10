@@ -1,13 +1,8 @@
 import { Profile, ScriptedMessageThread } from '@/types';
-import { ProfileHussain } from './Hussain';
+import { profileHussain } from './Hussain';
 import { ProfileAmelia } from './Amelia';
 
-export const lorem =
-  'Lorem ipsum dolor sit amet consectetur adipisicing elit Nulla sequi iusto expedita iste doloribus quos natus nam sit hic perspiciatis illo temporibus Expedita aliquam et molestias quidem ipsum Quo assumenda ipsum Quia et ratione veniam iste illo similique accusamus vel voluptatum voluptas perspiciatis consequuntur voluptates recusandae vitae blanditiis repellendus odio';
-
-const words = lorem.split(' ');
-
-export const profiles: Profile[] = [ProfileHussain];
+export const chatProfiles: Profile[] = [profileHussain];
 
 export const profilesToSwipe: Profile[] = [ProfileAmelia];
 

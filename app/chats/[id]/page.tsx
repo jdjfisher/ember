@@ -4,7 +4,7 @@ import Message from '@/components/chats/Message';
 import MessageForm from '@/components/chats/MessageForm';
 import { BiArrowBack } from 'react-icons/bi';
 import { BsThreeDots } from 'react-icons/bs';
-import { profiles, messageThread } from '@/lib/dummy';
+import { chatProfiles } from '@/lib/dummy';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -14,7 +14,7 @@ import Typing from '@/components/chats/Typing';
 export default function Chat({ params }: any) {
   const id = params?.id;
 
-  const profile = profiles.find((profile) => profile.id == id)!;
+  const profile = chatProfiles.find((profile) => profile.id == id)!;
 
   const [scriptIndex, setScriptIndex] = useState(0);
 

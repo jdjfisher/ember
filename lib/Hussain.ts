@@ -27,7 +27,7 @@ export const messagesHussain: ScriptedMessageThread = [
   },
 ];
 
-export const ProfileHussain: Profile = {
+export const profileHussain: Profile = {
   id: 1,
   imageUrls: [
     `https://i.pravatar.cc/700?img=1`,
