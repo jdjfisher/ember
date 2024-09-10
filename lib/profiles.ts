@@ -47,6 +47,77 @@ export const hussain: Profile = {
   chat: hussainMessages,
 };
 
+const extras: Profile[] = [
+  {
+    id: 3,
+    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+    name: 'Hugo',
+    title: '',
+    age: 35,
+    livesIn: 'London',
+    interests: ['TV Shows', 'Cooking', 'Football', 'Music'],
+    aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.',
+  },
+  {
+    id: 4,
+    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+    name: 'Hugo',
+    title: '',
+    age: 35,
+    livesIn: 'London',
+    interests: ['TV Shows', 'Cooking', 'Football', 'Music'],
+    aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.',
+  },
+  {
+    id: 5,
+    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+    name: 'Hugo',
+    title: '',
+    age: 35,
+    livesIn: 'London',
+    interests: ['TV Shows', 'Cooking', 'Football', 'Music'],
+    aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.',
+  },
+  {
+    id: 6,
+    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+    name: 'Hugo',
+    title: '',
+    age: 35,
+    livesIn: 'London',
+    interests: ['TV Shows', 'Cooking', 'Football', 'Music'],
+    aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.',
+  },
+  {
+    id: 7,
+    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+    name: 'Hugo',
+    title: '',
+    age: 35,
+    livesIn: 'London',
+    interests: ['TV Shows', 'Cooking', 'Football', 'Music'],
+    aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.',
+  },
+  {
+    id: 8,
+    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+    name: 'Hugo',
+    title: '',
+    age: 35,
+    livesIn: 'London',
+    interests: ['TV Shows', 'Cooking', 'Football', 'Music'],
+    aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.',
+  },
+] as const;
+
 export const chatProfiles: Profile[] = [hussain];
 
-export const profilesToSwipe: Profile[] = [amelia];
+export const profilesToSwipe: Profile[] = [
+  extras[0],
+  extras[1],
+  extras[2],
+  extras[3],
+  extras[4],
+  amelia,
+  extras[5],
+];
