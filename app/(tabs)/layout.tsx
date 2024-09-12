@@ -26,9 +26,8 @@ export default function TabLayout({ children }: Props) {
           <Image src="/icons/logo.png" alt="logo" width={35} height={35} />
         </Link>
       </section>
-
       <section className="flex flex-1">{children}</section>
-
+      {/* // todo make the NavTabs absolute position - chat list is too long so there's scrolling, but want the NavTabs to always be at the bottom */}
       <NavTabs />
     </>
   );

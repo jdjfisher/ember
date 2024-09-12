@@ -16,7 +16,7 @@ export default function RootLayout({ children }: Props) {
 
       <body className="mx-auto grid h-screen max-w-sm items-center overflow-x-hidden">
         {/* Hide overflow to disable pull-to-refresh */}
-        <main className="flex h-full max-h-[60rem] flex-col justify-between overflow-x-hidden overflow-y-hidden">
+        <main className="flex h-full max-h-[60rem] flex-col justify-between overflow-x-hidden overflow-y-auto">
           {children}
         </main>
       </body>

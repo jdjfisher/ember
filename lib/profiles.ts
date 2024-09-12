@@ -28,6 +28,7 @@ export const hussain: Profile = {
   interests: ['i', 'd', 'k'],
   aboutMe: 'hi:)',
   chat: hussainMessages,
+  lastMessage: 'Sounds good aha',
 };
 
 export const amelia: Profile = {
@@ -65,10 +66,19 @@ export const mila: Profile = {
   chat: milaMessages,
 };
 
-const extras: Profile[] = [
-  {
-    id: 9,
-    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+const extras: { [id: number]: Profile } = {
+  101: {
+    id: 101,
+    imageUrls: [
+      '/pics/kelly/1.jpeg',
+      '/pics/kelly/2.jpeg',
+      '/pics/kelly/3.jpeg',
+      '/pics/kelly/4.jpeg',
+      '/pics/kelly/5.jpeg',
+      '/pics/kelly/6.jpeg',
+      '/pics/kelly/7.jpeg',
+      '/pics/kelly/8.jpeg',
+    ],
     name: 'Kelly',
     title: '',
     age: 22,
@@ -77,9 +87,9 @@ const extras: Profile[] = [
     aboutMe:
       "If you also like Shakespeare, Jeff Buckley and spending Sundays in bed watching movies, I'm your perfect match 🥰",
   },
-  {
-    id: 4,
-    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+  102: {
+    id: 102,
+    imageUrls: ['/pics/benoit/1.JPG', '/pics/benoit/2.JPG'],
     name: 'Benoit',
     title: '',
     age: 29,
@@ -88,9 +98,9 @@ const extras: Profile[] = [
     aboutMe:
       "I love maps 🌎 \n I like to read maps, I like to make maps. Let's map out our future together 🖊",
   },
-  {
-    id: 5,
-    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+  103: {
+    id: 103,
+    imageUrls: ['/pics/chanel/1.JPG'],
     name: 'Chanel',
     title: '',
     age: 27,
@@ -99,9 +109,15 @@ const extras: Profile[] = [
     aboutMe:
       "Red flag: don't bother if you've never left Europe \n Travel expert \n Let me broaden your horizons 💅",
   },
-  {
-    id: 6,
-    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+  104: {
+    id: 104,
+    imageUrls: [
+      '/pics/alfonso/1.jpeg',
+      '/pics/alfonso/2.jpeg',
+      '/pics/alfonso/3.jpeg',
+      '/pics/alfonso/4.jpeg',
+      '/pics/alfonso/5.jpeg',
+    ],
     name: 'Alfonso',
     title: '',
     age: 25,
@@ -110,9 +126,9 @@ const extras: Profile[] = [
     aboutMe:
       "Don't talk to me before I've had my morning sarcasm. \n If you can't match my banter, I will publicly shame you. \n No monkey pic, no match. 🐒",
   },
-  {
-    id: 7,
-    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+  105: {
+    id: 105,
+    imageUrls: ['/pics/callum/1.jpg'],
     name: 'Callum',
     title: '',
     age: 32,
@@ -120,26 +136,102 @@ const extras: Profile[] = [
     interests: ['Coffee', 'DIY', 'Disco'],
     aboutMe: 'Born in the wrong era. Long live physical media. Come see my vinyl collection. ',
   },
-  {
-    id: 10,
-    imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
-    name: 'Stepan',
+  106: {
+    id: 106,
+    imageUrls: ['/pics/ed/1.JPG'],
+    name: 'Ed',
     title: '',
     age: 32,
     livesIn: 'London',
     interests: ['Coffee', 'DIY', 'Disco'],
-    aboutMe: 'Born in the wrong era. Long live physical media. Come see my vinyl collection. ',
+    aboutMe: 'Here x',
   },
+  107: {
+    id: 107,
+    imageUrls: ['/pics/bella/1.JPG'],
+    name: 'Bella',
+    title: '',
+    age: 32,
+    livesIn: 'London',
+    interests: [],
+    aboutMe: '',
+    lastMessage: "It's a social construct...",
+  },
+  108: {
+    id: 108,
+    imageUrls: ['/pics/jacques/1.jpg'],
+    name: 'Jacques',
+    title: '',
+    age: 32,
+    livesIn: 'London',
+    interests: [],
+    aboutMe: '',
+    lastMessage: 'I can bench 125 pretty easy x',
+  },
+  109: {
+    id: 109,
+    imageUrls: ['/pics/michelle/1.jpg'],
+    name: 'Michelle',
+    title: '',
+    age: 32,
+    livesIn: 'London',
+    interests: [],
+    aboutMe: '',
+    lastMessage: "I'm outside :)",
+  },
+  110: {
+    id: 110,
+    imageUrls: ['/pics/sarah/1.jpg'],
+    name: 'Sarah',
+    title: '',
+    age: 32,
+    livesIn: 'London',
+    interests: [],
+    aboutMe: '',
+    lastMessage: "I'm free on Thursday?",
+  },
+  111: {
+    id: 111,
+    imageUrls: ['https://i.pravatar.cc/700?img=1'],
+    name: 'Victor',
+    title: '',
+    age: 32,
+    livesIn: 'London',
+    interests: [],
+    aboutMe: '',
+    lastMessage: 'Do you?',
+  },
+  112: {
+    id: 112,
+    imageUrls: ['https://i.pravatar.cc/700?img=1'],
+    name: 'Jacob',
+    title: '',
+    age: 32,
+    livesIn: 'London',
+    interests: [],
+    aboutMe: '',
+    lastMessage: "I'm walking to you now",
+  },
+};
+
+export const chatProfiles: Profile[] = [
+  hussain,
+  extras[111],
+  extras[108],
+  extras[107],
+  extras[110],
+  extras[109],
+  extras[106],
+  extras[112],
+  mila,
 ];
 
-export const chatProfiles: Profile[] = [hussain, mila];
-
 export const profilesToSwipe: Profile[] = [
-  extras[0],
-  extras[1],
-  extras[2],
-  extras[3],
-  extras[4],
+  extras[101],
+  extras[102],
+  extras[103],
+  extras[104],
+  extras[105],
   amelia,
-  extras[5],
+  extras[106],
 ];
