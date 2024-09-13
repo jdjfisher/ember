@@ -144,7 +144,16 @@ const extras: { [id: number]: Profile } = {
     age: 32,
     livesIn: 'London',
     interests: ['Coffee', 'DIY', 'Disco'],
-    aboutMe: 'Here x',
+    aboutMe: '',
+    lastMessage: 'Here x',
+    chat: [
+      {
+        type: 'message',
+        text: 'Here x',
+        timestamp: 'Yesterday',
+        picture: true,
+      },
+    ],
   },
   107: {
     id: 107,
@@ -156,6 +165,14 @@ const extras: { [id: number]: Profile } = {
     interests: [],
     aboutMe: '',
     lastMessage: "It's a social construct...",
+    chat: [
+      {
+        type: 'message',
+        text: "It's a social construct...",
+        timestamp: 'Yesterday',
+        picture: true,
+      },
+    ],
   },
   108: {
     id: 108,
@@ -167,6 +184,14 @@ const extras: { [id: number]: Profile } = {
     interests: [],
     aboutMe: '',
     lastMessage: 'I can bench 125 pretty easy x',
+    chat: [
+      {
+        type: 'message',
+        text: 'I can bench 125 pretty easy x',
+        timestamp: 'Yesterday',
+        picture: true,
+      },
+    ],
   },
   109: {
     id: 109,
@@ -178,6 +203,14 @@ const extras: { [id: number]: Profile } = {
     interests: [],
     aboutMe: '',
     lastMessage: "I'm outside :)",
+    chat: [
+      {
+        type: 'message',
+        text: "I'm outside :)",
+        timestamp: 'Yesterday',
+        picture: true,
+      },
+    ],
   },
   110: {
     id: 110,
@@ -189,6 +222,14 @@ const extras: { [id: number]: Profile } = {
     interests: [],
     aboutMe: '',
     lastMessage: "I'm free on Thursday?",
+    chat: [
+      {
+        type: 'message',
+        text: "I'm free on Thursday?",
+        timestamp: 'Yesterday',
+        picture: true,
+      },
+    ],
   },
   111: {
     id: 111,
@@ -200,6 +241,14 @@ const extras: { [id: number]: Profile } = {
     interests: [],
     aboutMe: '',
     lastMessage: 'Do you?',
+    chat: [
+      {
+        type: 'message',
+        text: 'Do you?',
+        timestamp: 'Yesterday',
+        picture: true,
+      },
+    ],
   },
   112: {
     id: 112,
@@ -211,6 +260,14 @@ const extras: { [id: number]: Profile } = {
     interests: [],
     aboutMe: '',
     lastMessage: "I'm walking to you now",
+    chat: [
+      {
+        type: 'message',
+        text: "I'm walking to you now",
+        timestamp: 'Yesterday',
+        picture: true,
+      },
+    ],
   },
 };
 

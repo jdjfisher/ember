@@ -17,6 +17,7 @@ export interface Message {
   sentByYou: boolean;
   text: string;
   timestamp?: string;
+  picture?: string;
 }
 
 export type ScriptedMessageThread = Array<
@@ -24,6 +25,7 @@ export type ScriptedMessageThread = Array<
       type: 'message';
       text: string;
       timestamp?: string;
+      picture?: boolean;
     }
   | {
       type: 'userMessage';

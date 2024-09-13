@@ -42,11 +42,15 @@ export default function Chat({ params }: any) {
     }
 
     if (currentScriptAction.type === 'message') {
-      addMessage({
+      var newMessage: MessageT = {
         text: currentScriptAction.text,
         sentByYou: false,
         timestamp: currentScriptAction.timestamp,
-      });
+      };
+      if (currentScriptAction.picture) {
+        newMessage.picture = profile.imageUrls[0];
+      }
+      addMessage(newMessage);
     }
 
     if (currentScriptAction.type === 'userMessage') {
