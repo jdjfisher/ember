@@ -291,4 +291,4 @@ export const profilesToSwipe: Profile[] = [
   extras[105],
   amelia,
   extras[106],
-];
+].reverse();

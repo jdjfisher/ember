@@ -5,10 +5,12 @@ import { profilesToSwipe } from '@/lib/profiles';
 
 export default function Home() {
   return (
-    <div className="relative mx-4 my-2 w-full rounded-3xl bg-[#EE1F4D] overflow-y-hidden overflow-x-hidden">
-      {profilesToSwipe.toReversed().map((profile) => (
-        <SwipeCard profile={profile} key={profile.id} />
-      ))}
+    <div className="h-full p-5">
+      <div className="relative h-full overflow-hidden rounded-3xl bg-[#ee1f4c0a]">
+        {profilesToSwipe.map((profile) => (
+          <SwipeCard profile={profile} key={profile.id} />
+        ))}
+      </div>
     </div>
   );
 }
