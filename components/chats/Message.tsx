@@ -10,10 +10,20 @@ export default function Message({ message }: Props) {
     message.sentByYou ? 'bg-red-400 ml-auto' : 'bg-red-200',
   ].join(' ');
 
+  const containerClass = message.sentByYou ? 'flex justify-end' : 'flex';
+  const paddingClass = !message.sentByYou && message.picture ? '' : 'pl-10';
+
   return (
     <div>
-      {message.timestamp && <div className="text-center text-gray-500">{message.timestamp}</div>}
-      <div className={className}>{message.text}</div>
+      <div>
+        {message.timestamp && <div className="text-center text-gray-500">{message.timestamp}</div>}
+      </div>
+      <div className={`${containerClass} ${paddingClass}`}>
+        {!message.sentByYou && message.picture && (
+          <img src={message.picture} alt="Profile" className="w-8 h-8 rounded-full mr-2" />
+        )}
+        <div className={className}>{message.text}</div>
+      </div>
     </div>
   );
 }

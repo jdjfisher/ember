@@ -7,6 +7,10 @@ interface Props {
 }
 
 export default function ChatCard({ profile }: Props) {
+  const lastMessage = profile.chat?.find(
+    (action) => typeof action === 'object' && 'text' in action
+  )?.text;
+
   return (
     <Link href={`/chats/${profile.id}`} className="flex items-center gap-4 px-5 py-3">
       <Image
@@ -20,7 +24,7 @@ export default function ChatCard({ profile }: Props) {
       <div className="w-full">
         <div className="font-bold">{profile.name}</div>
         <div className="flex items-end justify-between text-gray-500">
-          <span>{profile.age}</span>
+          <span>{lastMessage}</span>
         </div>
       </div>
     </Link>
