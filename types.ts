@@ -10,7 +10,6 @@ export interface Profile {
   interests: string[]; // max 4?
   aboutMe: string;
   chat?: ScriptedMessageThread;
-  lastMessage?: string;
 }
 
 export interface Message {

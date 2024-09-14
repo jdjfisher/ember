@@ -28,7 +28,6 @@ export const hussain: Profile = {
   interests: ['i', 'd', 'k'],
   aboutMe: 'hi:)',
   chat: hussainMessages,
-  lastMessage: 'Sounds good aha',
 };
 
 export const amelia: Profile = {
@@ -149,7 +148,6 @@ const ed: Profile = {
   livesIn: 'London',
   interests: ['Coffee', 'DIY', 'Disco'],
   aboutMe: '',
-  lastMessage: 'Here x',
   chat: [
     {
       type: 'message',
@@ -169,7 +167,6 @@ const bella: Profile = {
   livesIn: 'London',
   interests: [],
   aboutMe: '',
-  lastMessage: "It's a social construct...",
   chat: [
     {
       type: 'message',
@@ -189,7 +186,6 @@ const jacques: Profile = {
   livesIn: 'London',
   interests: [],
   aboutMe: '',
-  lastMessage: 'I can bench 125 pretty easy x',
   chat: [
     {
       type: 'message',
@@ -209,7 +205,6 @@ const michelle: Profile = {
   livesIn: 'London',
   interests: [],
   aboutMe: '',
-  lastMessage: "I'm outside :)",
   chat: [
     {
       type: 'message',
@@ -229,7 +224,6 @@ const sarah: Profile = {
   livesIn: 'London',
   interests: [],
   aboutMe: '',
-  lastMessage: "I'm free on Thursday?",
   chat: [
     {
       type: 'message',
@@ -249,7 +243,6 @@ const victor: Profile = {
   livesIn: 'London',
   interests: [],
   aboutMe: '',
-  lastMessage: 'Do you?',
   chat: [
     {
       type: 'message',
@@ -269,7 +262,6 @@ const jacob: Profile = {
   livesIn: 'London',
   interests: [],
   aboutMe: '',
-  lastMessage: "I'm walking to you now",
   chat: [
     {
       type: 'message',
