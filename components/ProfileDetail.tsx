@@ -30,9 +30,9 @@ export function ProfileDetail({ profile }: Props) {
   };
 
   return (
-    <div className="flex h-full flex-col gap-2">
+    <div className="h-full space-y-2">
       <div
-        className="flex-1 select-none justify-between rounded-3xl border-2 p-4 text-white"
+        className="h-[30rem] select-none rounded-3xl border-2 p-4 text-white"
         onClick={onClick}
         style={style}
       >
@@ -57,7 +57,7 @@ export function ProfileDetail({ profile }: Props) {
         </div>
       </div>
 
-      <div className="flex flex-row space-x-2">
+      <div className="flex gap-2">
         <div>
           <FaHouseUser size={25} />
         </div>
@@ -73,7 +73,7 @@ export function ProfileDetail({ profile }: Props) {
         <div className="whitespace-pre-line">{profile.aboutMe}</div>
       </div>
 
-      <div className="flex flex-row space-x-2">
+      <div className="flex gap-2">
         <div>
           <MdInterests size={25} />
         </div>
@@ -83,7 +83,7 @@ export function ProfileDetail({ profile }: Props) {
       </div>
 
       <div>
-        <div className="flex flex-row space-x-3">
+        <div className="flex gap-3">
           {profile.interests.map((item) => (
             <div className="rounded border-2 p-1" key={item}>
               {item}

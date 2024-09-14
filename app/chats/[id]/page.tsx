@@ -73,8 +73,8 @@ export default function Chat({ params }: any) {
   }, [scriptIndex]);
 
   return (
-    <div className="relative space-y-2 p-3" style={{ height: windowHeight }}>
-      <div className="flex items-center gap-4">
+    <div className="flex flex-col" style={{ height: windowHeight }}>
+      <div className="flex items-center gap-4 sticky top-0 bg-white shadow-sm p-4">
         <Link href="/chats">
           <BiArrowBack size={24} />
         </Link>
@@ -94,16 +94,14 @@ export default function Chat({ params }: any) {
         <BsThreeDots size={24} className="ml-auto" />
       </div>
 
-      <hr />
-
-      <div className="space-y-2">
+      <div className="flex-1 space-y-2 overflow-y-auto p-4">
         {messages.map((message, i) => (
           <Message message={message} key={i} />
         ))}
         {isTyping && <Typing />}
       </div>
 
-      <section className="absolute bottom-5 left-0 w-full px-2">
+      <section className="p-4">
         <MessageForm onMessage={onMessage} />
       </section>
     </div>
