@@ -1,17 +1,19 @@
-import { Message as MessageI } from '@/types';
+import { Message as MessageI, Profile } from '@/types';
+import ProfileIcon from '../ProfileIcon';
 
 interface Props {
   message: MessageI;
+  profile: Profile;
 }
 
-export default function Message({ message }: Props) {
+export default function Message({ message, profile }: Props) {
   const className = [
     'max-w-[16rem] rounded-2xl px-4 py-2 w-fit',
     message.sentByYou ? 'bg-red-400 ml-auto' : 'bg-red-200',
   ].join(' ');
 
-  const containerClass = message.sentByYou ? 'flex justify-end' : 'flex';
-  const paddingClass = !message.sentByYou && message.picture ? '' : 'pl-10';
+  const containerClass = message.sentByYou ? 'flex justify-end' : 'flex items-start';
+  const paddingClass = !message.sentByYou && message.picture ? 'gap-2' : 'pl-10';
 
   return (
     <div>
@@ -21,9 +23,7 @@ export default function Message({ message }: Props) {
         )}
       </div>
       <div className={`${containerClass} ${paddingClass}`}>
-        {!message.sentByYou && message.picture && (
-          <img src={message.picture} alt="Profile" className="w-8 h-8 rounded-full mr-2" />
-        )}
+        {!message.sentByYou && message.picture && <ProfileIcon profile={profile} />}
         <div className={className}>{message.text}</div>
       </div>
     </div>

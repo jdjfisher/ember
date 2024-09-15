@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Message as MessageT } from '@/types';
 import Typing from '@/components/chats/Typing';
 import classNames from 'classnames';
+import ProfileIcon from '@/components/ProfileIcon';
 
 export default function Chat({ params }: any) {
   const id = params?.id;
@@ -92,13 +93,7 @@ export default function Chat({ params }: any) {
           </Link>
 
           <Link href={`/profiles/${profile.id}`}>
-            <Image
-              src={profile.imageUrls[0]!}
-              alt={profile.name}
-              height={32}
-              width={32}
-              className="rounded-full"
-            />
+            <ProfileIcon profile={profile} />
           </Link>
           <Link href={`/profiles/${profile.id}`}>
             <h2>{profile.name}</h2>
@@ -108,7 +103,7 @@ export default function Chat({ params }: any) {
 
         <div className="flex-1 space-y-2 overflow-y-auto p-4 pb-16" ref={chatBodyRef}>
           {messages.map((message, i) => (
-            <Message message={message} key={i} />
+            <Message profile={profile} message={message} key={i} />
           ))}
           {isTyping && <Typing />}
         </div>
