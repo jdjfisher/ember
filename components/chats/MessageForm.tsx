@@ -12,6 +12,11 @@ export default function MessageForm({ onMessage }: Props) {
 
   const onSubmit: FormEventHandler = (e) => {
     e.preventDefault();
+
+    if (!text) {
+      return;
+    }
+
     onMessage(text);
     setText('');
   };

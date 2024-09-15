@@ -7,7 +7,7 @@ import { BsThreeDots } from 'react-icons/bs';
 import { chatProfiles } from '@/lib/profiles';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Message as MessageT } from '@/types';
 import Typing from '@/components/chats/Typing';
 
@@ -22,9 +22,19 @@ export default function Chat({ params }: any) {
 
   const [messages, setMessages] = useState<MessageT[]>([]);
 
+  const chatBodyRef = useRef<HTMLDivElement>(null);
+
   function addMessage(message: MessageT) {
     setMessages([...messages, message]);
     setScriptIndex(scriptIndex + 1);
+
+    // Scroll to the bottom of the chat
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTo({
+        top: chatBodyRef.current.scrollHeight,
+        behavior: 'smooth',
+      });
+    }
   }
 
   function onMessage(message: string) {
@@ -84,7 +94,7 @@ export default function Chat({ params }: any) {
         <BsThreeDots size={24} className="ml-auto" />
       </div>
 
-      <div className="flex-1 space-y-2 overflow-y-auto p-4">
+      <div className="flex-1 space-y-2 overflow-y-auto p-4 pb-16" ref={chatBodyRef}>
         {messages.map((message, i) => (
           <Message message={message} key={i} />
         ))}
