@@ -33,6 +33,6 @@ interface DelayAction {
   typing: boolean;
 }
 
-export type ScriptedMessageAction = MessageAction | DelayAction | 'prompt';
+export type ScriptedMessageAction = MessageAction | DelayAction | 'prompt' | 'unmatch';
 
 export type ScriptedMessageThread = ScriptedMessageAction[];

@@ -155,6 +155,8 @@ const ed: Profile = {
       timestamp: 'Yesterday',
       picture: true,
     },
+    'prompt',
+    'unmatch',
   ],
 };
 

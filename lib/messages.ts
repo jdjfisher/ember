@@ -59,5 +59,6 @@ export const milaMessages: ScriptedMessageThread = [
   { type: 'message', text: 'LMAO', picture: true },
   { type: 'delay', duration: 250, typing: false },
   { type: 'message', text: 'Nahhhh' },
-  // TODO: UNMATCHED
+  { type: 'delay', duration: 500, typing: false },
+  'unmatch',
 ];
