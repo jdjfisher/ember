@@ -120,8 +120,8 @@ export default function Chat({ params }: any) {
 
       <div
         className={classNames(
-          'absolute flex items-center justify-center top-0 left-0 h-full w-full transition-[width] transition-[height] duration-1000',
-          { 'w-0 h-0': !unmatched }
+          'absolute flex items-center justify-center top-0 left-0 h-full w-full',
+          { hidden: !unmatched }
         )}
       >
         <Image
