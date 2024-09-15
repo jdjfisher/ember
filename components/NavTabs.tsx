@@ -31,7 +31,7 @@ export default function NavTabs() {
   return (
     <nav className="flex justify-around gap-1 bg-white shadow-2xl py-6">
       {tabs.map((tab) => (
-        <Link href={tab.href} key={tab.href} className="flex justify-center">
+        <Link href={tab.href} key={tab.href} className="flex justify-center w-full">
           <tab.icon size={24} color={pathname === tab.href ? 'black' : 'gray'} />
         </Link>
       ))}
