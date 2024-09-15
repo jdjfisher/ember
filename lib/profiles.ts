@@ -84,7 +84,6 @@ const kelly: Profile = {
   interests: ['Puzzles', 'Walks in the rain', 'Nicholas Sparks', 'Crochet & Knitting'],
   aboutMe:
     "If you also like Shakespeare, Jeff Buckley and spending Sundays in bed watching movies, I'm your perfect match 🥰",
-  swipedRight: true,
 };
 
 const benoit: Profile = {
@@ -109,6 +108,7 @@ const chanel: Profile = {
   interests: ['Travel', 'Food', 'Skiing', 'Cocktails'],
   aboutMe:
     "Red flag: don't bother if you've never left Europe \n Travel expert \n Let me broaden your horizons 💅",
+  swipedRight: true,
 };
 
 const alfonso: Profile = {
@@ -298,3 +298,5 @@ export const profilesToSwipe: Profile[] = [
   amelia,
   ed,
 ].reverse();
+
+export const allProfiles = [...chatProfiles, ...profilesToSwipe];

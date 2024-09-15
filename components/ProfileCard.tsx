@@ -1,12 +1,14 @@
 import { Profile } from '@/types';
 import { MouseEventHandler, useState } from 'react';
 import Link from 'next/link';
+import classNames from 'classnames';
 
 interface Props {
   profile: Profile;
+  className?: string;
 }
 
-export function ProfileCard({ profile }: Props) {
+export function ProfileCard({ profile, className }: Props) {
   const [imageIndex, setImageIndex] = useState(0);
 
   const imageUrl = profile.imageUrls[imageIndex];
@@ -30,7 +32,10 @@ export function ProfileCard({ profile }: Props) {
 
   return (
     <div
-      className="flex h-full select-none flex-col justify-between rounded-3xl p-4 text-white"
+      className={classNames(
+        'flex h-full select-none flex-col justify-between rounded-3xl p-4 text-white',
+        className
+      )}
       onClick={onClick}
       style={style}
     >

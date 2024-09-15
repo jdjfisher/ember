@@ -4,7 +4,7 @@ import Message from '@/components/chats/Message';
 import MessageForm from '@/components/chats/MessageForm';
 import { BiArrowBack } from 'react-icons/bi';
 import { BsThreeDots } from 'react-icons/bs';
-import { chatProfiles } from '@/lib/profiles';
+import { allProfiles } from '@/lib/profiles';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
@@ -14,9 +14,9 @@ import classNames from 'classnames';
 import ProfileIcon from '@/components/ProfileIcon';
 
 export default function Chat({ params }: any) {
-  const id = params?.id;
+  const id = Number(params?.id);
 
-  const profile = chatProfiles.find((profile) => profile.id == id)!;
+  const profile = allProfiles.find((profile) => profile.id == id)!;
 
   const [unmatched, setUnmatch] = useState(false);
 
@@ -46,7 +46,7 @@ export default function Chat({ params }: any) {
   }
 
   useEffect(() => {
-    const currentScriptAction = profile.chat![scriptIndex];
+    const currentScriptAction = profile.chat?.[scriptIndex];
 
     if (!currentScriptAction || currentScriptAction === 'prompt') {
       return;
