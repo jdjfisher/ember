@@ -84,6 +84,7 @@ const kelly: Profile = {
   interests: ['Puzzles', 'Walks in the rain', 'Nicholas Sparks', 'Crochet & Knitting'],
   aboutMe:
     "If you also like Shakespeare, Jeff Buckley and spending Sundays in bed watching movies, I'm your perfect match 🥰",
+  swipedRight: true,
 };
 
 const benoit: Profile = {

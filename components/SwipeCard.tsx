@@ -10,20 +10,23 @@ const TinderCard = dynamic(() => import('react-tinder-card'), {
 
 interface Props {
   profile: Profile;
+  onMatch: (profile: Profile) => void;
+  onSwipe: () => void;
 }
 
-export default function SwipeCard({ profile }: Props) {
-  function onSwipe(direction: string) {
+export default function SwipeCard({ profile, onSwipe, onMatch }: Props) {
+  function handleSwipe(direction: string) {
+    onSwipe();
+
     if (!profile.swipedRight) {
       return;
     }
 
     switch (direction) {
       case 'right':
-        alert('Match!');
+        onMatch(profile);
         break;
       case 'left':
-        alert('Missed!');
         break;
     }
   }
@@ -33,7 +36,7 @@ export default function SwipeCard({ profile }: Props) {
       className="absolute h-full w-full"
       swipeRequirementType={'position'}
       preventSwipe={['down']}
-      onSwipe={onSwipe}
+      onSwipe={handleSwipe}
     >
       <ProfileCard profile={profile} />
     </TinderCard>
