@@ -1,15 +1,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Profile } from '@/types';
+import { MessageAction, Profile } from '@/types';
 
 interface Props {
   profile: Profile;
 }
 
 export default function ChatCard({ profile }: Props) {
-  const lastMessage = profile.chat?.find(
-    (action) => typeof action === 'object' && 'text' in action
-  )?.text;
+  function findLastMessage() {
+    if (!profile.chat) {
+      return undefined;
+    }
+
+    let lastMessageAction: MessageAction | undefined = undefined;
+
+    for (const action of profile.chat) {
+      if (typeof action === 'object' && 'text' in action) {
+        lastMessageAction = action;
+      } else {
+        break; // Stop once we hit the first false
+      }
+    }
+
+    return lastMessageAction?.text;
+  }
 
   return (
     <Link href={`/chats/${profile.id}`} className="flex items-center gap-4 px-5 py-3">
@@ -24,7 +38,7 @@ export default function ChatCard({ profile }: Props) {
       <div className="w-full">
         <div className="font-bold">{profile.name}</div>
         <div className="flex items-end justify-between text-gray-500">
-          <span>{lastMessage}</span>
+          <span>{findLastMessage()}</span>
         </div>
       </div>
     </Link>

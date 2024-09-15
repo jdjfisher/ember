@@ -19,18 +19,20 @@ export interface Message {
   picture?: string;
 }
 
-export type ScriptedMessageThread = Array<
-  | {
-      type: 'message';
-      text: string;
-      timestamp?: string;
-      sentByYou?: boolean;
-      picture?: boolean;
-    }
-  | {
-      type: 'delay';
-      duration: number;
-      typing: boolean;
-    }
-  | 'prompt'
->;
+export interface MessageAction {
+  type: 'message';
+  text: string;
+  timestamp?: string;
+  sentByYou?: boolean;
+  picture?: boolean;
+}
+
+interface DelayAction {
+  type: 'delay';
+  duration: number;
+  typing: boolean;
+}
+
+export type ScriptedMessageAction = MessageAction | DelayAction | 'prompt';
+
+export type ScriptedMessageThread = ScriptedMessageAction[];
