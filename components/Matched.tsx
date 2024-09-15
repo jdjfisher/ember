@@ -17,8 +17,7 @@ export default function Matched({ match, clearMatch }: Props) {
         'absolute backdrop-blur-sm top-0 w-full h-full flex flex-col gap-4 justify-center items-center z-10 left-0'
       )}
     >
-      {/* TODO: Switch */}
-      <Image src="/pics/unmatched.png" alt="Matched" width={100} height={100} />
+      <Image src="/pics/match.png" alt="Matched" width={300} height={300} />
 
       <div className="flex gap-8 items-center">
         <ProfileIcon profile={match} size={86} border />
