@@ -51,6 +51,11 @@ export default function Chat({ params }: any) {
       return;
     }
 
+    if (currentScriptAction === 'unmatch') {
+      setUnmatch(true);
+      return;
+    }
+
     if (currentScriptAction.type === 'message') {
       addMessage({
         text: currentScriptAction.text,
@@ -71,10 +76,6 @@ export default function Chat({ params }: any) {
       return () => {
         clearTimeout(timeout);
       };
-    }
-
-    if (currentScriptAction === 'unmatch') {
-      setUnmatch(true);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
