@@ -74,7 +74,7 @@ export default function Chat({ params }: any) {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex items-center gap-4 sticky top-0 bg-white shadow-sm p-4">
+      <div className="flex items-center gap-4 sticky top-0 bg-white shadow-sm p-4 h-16">
         <Link href="/chats">
           <BiArrowBack size={24} />
         </Link>

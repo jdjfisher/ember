@@ -15,7 +15,7 @@ export default function TabLayout({ children }: Props) {
 
   return (
     <>
-      <section className="grid grid-cols-3 items-center p-3 shadow-sm">
+      <section className="grid grid-cols-3 items-center p-3 shadow-sm h-16">
         <h1 className="select-none text-center col-start-2 text-lg font-bold text-[#EE1F4D] items-start">
           <button type="button" onClick={refresh}>
             Ember
