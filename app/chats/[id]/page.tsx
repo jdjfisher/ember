@@ -9,12 +9,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Message as MessageT } from '@/types';
-import useWindowHeight from '@/hooks/useWindowHeight';
 import Typing from '@/components/chats/Typing';
 
 export default function Chat({ params }: any) {
-  const windowHeight = useWindowHeight();
-
   const id = params?.id;
 
   const profile = chatProfiles.find((profile) => profile.id == id)!;
@@ -66,7 +63,7 @@ export default function Chat({ params }: any) {
   }, [scriptIndex]);
 
   return (
-    <div className="flex flex-col" style={{ height: windowHeight }}>
+    <div className="flex flex-col h-full">
       <div className="flex items-center gap-4 sticky top-0 bg-white shadow-sm p-4">
         <Link href="/chats">
           <BiArrowBack size={24} />

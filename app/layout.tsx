@@ -1,8 +1,15 @@
+import { Viewport } from 'next';
 import './globals.css';
 
 export const metadata = {
   title: 'Ember',
   description: 'Ember',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  interactiveWidget: 'resizes-content',
 };
 
 interface Props {
