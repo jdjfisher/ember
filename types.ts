@@ -24,12 +24,8 @@ export type ScriptedMessageThread = Array<
       type: 'message';
       text: string;
       timestamp?: string;
+      sentByYou?: boolean;
       picture?: boolean;
-    }
-  | {
-      type: 'userMessage';
-      text: string;
-      timestamp?: string;
     }
   | {
       type: 'delay';

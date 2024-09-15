@@ -8,8 +8,8 @@ export const hussainMessages: ScriptedMessageThread = [
     picture: true,
   },
   { type: 'message', text: 'U?' },
-  { type: 'userMessage', text: "I'm easy. Just want to meet ASAP" },
-  { type: 'userMessage', text: 'Come mine tomorrow? Got a friend round tonight?' },
+  { type: 'message', text: "I'm easy. Just want to meet ASAP", sentByYou: true },
+  { type: 'message', text: 'Come mine tomorrow? Got a friend round tonight?', sentByYou: true },
   { type: 'message', text: 'Sounds good aha', picture: true },
   { type: 'delay', duration: 1500, typing: true },
   {

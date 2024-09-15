@@ -42,22 +42,11 @@ export default function Chat({ params }: any) {
     }
 
     if (currentScriptAction.type === 'message') {
-      var newMessage: MessageT = {
-        text: currentScriptAction.text,
-        sentByYou: false,
-        timestamp: currentScriptAction.timestamp,
-      };
-      if (currentScriptAction.picture) {
-        newMessage.picture = profile.imageUrls[0];
-      }
-      addMessage(newMessage);
-    }
-
-    if (currentScriptAction.type === 'userMessage') {
       addMessage({
         text: currentScriptAction.text,
-        sentByYou: true,
+        sentByYou: currentScriptAction.sentByYou ?? false,
         timestamp: currentScriptAction.timestamp,
+        picture: currentScriptAction.picture ? profile.imageUrls[0] : undefined,
       });
     }
 
