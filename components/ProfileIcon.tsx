@@ -15,7 +15,7 @@ export default function ProfileIcon({ profile, size, border }: Props) {
       alt={profile.name}
       height={size ?? 32}
       width={size ?? 32}
-      className={classNames('rounded-full', { border: border })}
+      className={classNames('rounded-full object-cover aspect-square', { border: border })}
     />
   );
 }
