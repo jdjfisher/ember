@@ -1,7 +1,7 @@
 import { Profile } from '@/types';
 import { hussainMessages, milaMessages } from './messages';
 
-export const hugo: Profile = {
+const hugo: Profile = {
   id: 0,
   imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
   name: 'Hugo',
@@ -12,7 +12,7 @@ export const hugo: Profile = {
   aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.',
 };
 
-export const hussain: Profile = {
+const hussain: Profile = {
   id: 1,
   imageUrls: [
     `https://i.pravatar.cc/700?img=1`,
@@ -274,6 +274,8 @@ const jacob: Profile = {
     },
   ],
 };
+
+export const authUser = hugo;
 
 export const chatProfiles: Profile[] = [
   hussain,
