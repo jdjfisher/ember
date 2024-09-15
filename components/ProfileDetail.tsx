@@ -30,7 +30,7 @@ export function ProfileDetail({ profile }: Props) {
   };
 
   return (
-    <div className="h-full space-y-2">
+    <div className="h-full space-y-4">
       <div
         className="h-[30rem] select-none rounded-3xl border-2 p-4 text-white"
         onClick={onClick}
@@ -58,14 +58,8 @@ export function ProfileDetail({ profile }: Props) {
       </div>
 
       <div className="flex gap-2">
-        <div>
-          <FaHouseUser size={25} />
-        </div>
+        <FaHouseUser size={25} />
         <div>{profile.livesIn}</div>
-      </div>
-
-      <div>
-        <h1 className="text-2xl font-bold">About me</h1>
       </div>
 
       <div>
@@ -74,22 +68,16 @@ export function ProfileDetail({ profile }: Props) {
       </div>
 
       <div className="flex gap-2">
-        <div>
-          <MdInterests size={25} />
-        </div>
-        <div>
-          <h1 className="font-bold">Interests</h1>
-        </div>
+        <MdInterests size={25} />
+        <h1 className="font-bold">Interests</h1>
       </div>
 
-      <div>
-        <div className="flex gap-3">
-          {profile.interests.map((item) => (
-            <div className="rounded border-2 p-1" key={item}>
-              {item}
-            </div>
-          ))}
-        </div>
+      <div className="flex gap-2">
+        {profile.interests.map((item) => (
+          <div className="rounded-md border-2 py-1 px-2" key={item}>
+            {item}
+          </div>
+        ))}
       </div>
     </div>
   );

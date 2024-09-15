@@ -16,7 +16,9 @@ export default function Message({ message }: Props) {
   return (
     <div>
       <div>
-        {message.timestamp && <div className="text-center text-gray-500">{message.timestamp}</div>}
+        {message.timestamp && (
+          <div className="text-center text-xs mb-1 text-gray-500">{message.timestamp}</div>
+        )}
       </div>
       <div className={`${containerClass} ${paddingClass}`}>
         {!message.sentByYou && message.picture && (
