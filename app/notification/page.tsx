@@ -2,8 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
-export default function Settings() {
+export default function FakeNotification() {
   const [permission, setPermission] = useState('default');
+
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
 
   useEffect(() => {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
@@ -16,7 +19,6 @@ export default function Settings() {
       scope: '/',
       updateViaCache: 'none',
     });
-    console.log('Service worker registered');
   }
 
   useEffect(() => {
@@ -33,25 +35,27 @@ export default function Settings() {
     }
   };
 
-  const sendNotification = () => {
+  const sendNotification = async () => {
     if (!navigator.serviceWorker || Notification.permission !== 'granted') {
       alert('Please enable notifications first.');
       return;
     }
 
-    navigator.serviceWorker.ready.then(function (registration) {
-      console.log('Sending notification');
+    const registration = await navigator.serviceWorker.ready;
 
-      registration.showNotification('Ember', {
-        body: 'This is a push notification demo.',
-        icon: '/icons/logo.png', // Add an icon to the public folder
-      });
+    await registration.showNotification(title, {
+      body: body,
+      icon: '/icons/logo.png',
     });
+
+    setTitle('');
+    setBody('');
+    alert('Notification sent');
   };
 
   return (
     <div className="space-y-5 p-5">
-      <h1 className="font-bold">Settings</h1>
+      <h1 className="font-bold">Fake notification</h1>
 
       {permission === 'default' && (
         <button
@@ -63,18 +67,34 @@ export default function Settings() {
         </button>
       )}
 
-      {permission === 'granted' && (
-        <button
-          type="button"
-          className="border rounded px-3 py-1 bg-gray-100"
-          onClick={sendNotification}
-        >
-          Send Push Notification
-        </button>
-      )}
-
       {permission === 'denied' && (
         <p>Notification permission is denied. Please enable it in the browser settings.</p>
+      )}
+
+      {permission === 'granted' && (
+        <div className="space-y-2">
+          <input
+            type="text"
+            placeholder="Title"
+            className="w-full border rounded px-3 py-1 bg-gray-100"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            className="w-full border rounded px-3 py-1 bg-gray-100"
+            placeholder="Body"
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
+          />
+          <button
+            type="button"
+            className="border rounded px-3 py-1 bg-gray-100"
+            onClick={sendNotification}
+          >
+            Send
+          </button>
+        </div>
       )}
     </div>
   );

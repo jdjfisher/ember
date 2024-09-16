@@ -22,7 +22,7 @@ export default function TabLayout({ children }: Props) {
           </button>
         </h1>
 
-        <Link href="settings" className=" ml-auto">
+        <Link href="notification" className=" ml-auto">
           <Image src="/icons/logo.png" alt="logo" width={35} height={35} />
         </Link>
       </section>
