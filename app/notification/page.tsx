@@ -7,6 +7,8 @@ export default function FakeNotification() {
 
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [delay, setDelay] = useState(0);
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
@@ -41,16 +43,20 @@ export default function FakeNotification() {
       return;
     }
 
+    setSending(true);
+
     const registration = await navigator.serviceWorker.ready;
 
-    await registration.showNotification(title, {
-      body: body,
-      icon: '/icons/logo.png',
-    });
+    setTimeout(async () => {
+      await registration.showNotification(title, {
+        body: body,
+        icon: '/icons/logo.png',
+      });
 
-    setTitle('');
-    setBody('');
-    alert('Notification sent');
+      setTitle('');
+      setBody('');
+      setSending(false);
+    }, delay * 1000);
   };
 
   return (
@@ -72,29 +78,55 @@ export default function FakeNotification() {
       )}
 
       {permission === 'granted' && (
-        <div className="space-y-2">
-          <input
-            type="text"
-            placeholder="Title"
-            className="w-full border rounded px-3 py-1 bg-gray-100"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <input
-            type="text"
-            className="w-full border rounded px-3 py-1 bg-gray-100"
-            placeholder="Body"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-          />
-          <button
-            type="button"
-            className="border rounded px-3 py-1 bg-gray-100"
-            onClick={sendNotification}
-          >
+        <form
+          className="space-y-4"
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendNotification();
+          }}
+        >
+          <label>
+            Title
+            <input
+              required
+              type="text"
+              disabled={sending}
+              placeholder="New message"
+              className="w-full border rounded px-3 py-1 bg-gray-100"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </label>
+          <label>
+            Body
+            <input
+              required
+              type="text"
+              disabled={sending}
+              placeholder="You have a new message"
+              className="w-full border rounded px-3 py-1 bg-gray-100"
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+            />
+          </label>
+          <label>
+            Delay (seconds)
+            <input
+              required
+              type="number"
+              disabled={sending}
+              className="w-full border rounded px-3 py-1 bg-gray-100"
+              value={delay}
+              min={0}
+              onChange={(e) => setDelay(Number(e.target.value))}
+            />
+          </label>
+          <button type="submit" disabled={sending} className="border rounded px-3 py-1 bg-gray-100">
             Send
           </button>
-        </div>
+
+          {sending && <p>Sending...</p>}
+        </form>
       )}
     </div>
   );
