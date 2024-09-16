@@ -1,5 +1,5 @@
 import { Profile } from '@/types';
-import { MouseEventHandler, useState } from 'react';
+import { MouseEventHandler, TouchEventHandler, useState } from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
 
@@ -18,16 +18,25 @@ export function ProfileCard({ profile, className }: Props) {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    backgroundColor: 'black',
   };
+
+  function cycleImages(x: number) {
+    if (x < window.innerWidth / 2 && imageIndex > 0) {
+      setImageIndex(imageIndex - 1);
+    } else if (x > window.innerWidth / 2 && imageIndex < profile.imageUrls.length - 1) {
+      setImageIndex(imageIndex + 1);
+    }
+  }
 
   const onClick: MouseEventHandler = (e) => {
     e.stopPropagation();
+    cycleImages(e.clientX);
+  };
 
-    if (e.clientX < window.innerWidth / 2 && imageIndex > 0) {
-      setImageIndex(imageIndex - 1);
-    } else if (e.clientX > window.innerWidth / 2 && imageIndex < profile.imageUrls.length - 1) {
-      setImageIndex(imageIndex + 1);
-    }
+  const onTouchStart: TouchEventHandler = (e) => {
+    e.stopPropagation();
+    cycleImages(e.touches[0].clientX);
   };
 
   return (
@@ -36,8 +45,9 @@ export function ProfileCard({ profile, className }: Props) {
         'flex h-full select-none flex-col justify-between rounded-3xl p-4 text-white',
         className
       )}
-      onClick={onClick}
       style={style}
+      onClick={onClick}
+      onTouchStart={onTouchStart}
     >
       <div className="flex gap-3">
         {profile.imageUrls.length > 1 &&
