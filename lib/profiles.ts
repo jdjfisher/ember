@@ -33,11 +33,11 @@ const hussain: Profile = {
 export const amelia: Profile = {
   id: 2,
   imageUrls: [
-    '/pics/amelia/1.jpeg',
-    '/pics/amelia/2.jpeg',
-    '/pics/amelia/3.jpeg',
-    '/pics/amelia/4.jpeg',
-    '/pics/amelia/5.jpeg',
+    '/pics/amelia/1.jpg',
+    '/pics/amelia/2.jpg',
+    '/pics/amelia/3.jpg',
+    '/pics/amelia/4.jpg',
+    '/pics/amelia/5.jpg',
   ],
   name: 'Amelia',
   title: '',
@@ -51,7 +51,7 @@ export const amelia: Profile = {
 
 export const mila: Profile = {
   id: 3,
-  imageUrls: ['/pics/mila/1.jpeg'],
+  imageUrls: ['/pics/mila/1.png'],
   name: 'Mila',
   title: '',
   age: 24,
