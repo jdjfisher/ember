@@ -5,8 +5,7 @@ import { useEffect, useState } from 'react';
 export default function FakeNotification() {
   const [permission, setPermission] = useState('default');
 
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [sender, setSender] = useState('');
   const [delay, setDelay] = useState(0);
   const [sending, setSending] = useState(false);
 
@@ -48,13 +47,11 @@ export default function FakeNotification() {
     const registration = await navigator.serviceWorker.ready;
 
     setTimeout(async () => {
-      await registration.showNotification(title, {
-        body: body,
+      await registration.showNotification(sender.concat(' sent you a new message'), {
         icon: '/icons/logo.png',
       });
 
-      setTitle('');
-      setBody('');
+      setSender('');
       setSending(false);
     }, delay * 1000);
   };
@@ -86,27 +83,15 @@ export default function FakeNotification() {
           }}
         >
           <label>
-            Title
+            Sender name
             <input
               required
               type="text"
               disabled={sending}
-              placeholder="New message"
+              placeholder="Add name"
               className="w-full border rounded px-3 py-1 bg-gray-100"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </label>
-          <label>
-            Body
-            <input
-              required
-              type="text"
-              disabled={sending}
-              placeholder="You have a new message"
-              className="w-full border rounded px-3 py-1 bg-gray-100"
-              value={body}
-              onChange={(e) => setBody(e.target.value)}
+              value={sender}
+              onChange={(e) => setSender(e.target.value)}
             />
           </label>
           <label>
