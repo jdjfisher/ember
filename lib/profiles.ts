@@ -33,9 +33,11 @@ const hussain: Profile = {
 export const amelia: Profile = {
   id: 2,
   imageUrls: [
-    `https://i.pravatar.cc/700?img=1`,
-    `https://i.pravatar.cc/200?img=2`,
-    `https://i.pravatar.cc/50?img=3`,
+    '/pics/amelia/1.jpeg',
+    '/pics/amelia/2.jpeg',
+    '/pics/amelia/3.jpeg',
+    '/pics/amelia/4.jpeg',
+    '/pics/amelia/5.jpeg',
   ],
   name: 'Amelia',
   title: '',
@@ -49,11 +51,7 @@ export const amelia: Profile = {
 
 export const mila: Profile = {
   id: 3,
-  imageUrls: [
-    `https://i.pravatar.cc/700?img=1`,
-    `https://i.pravatar.cc/200?img=2`,
-    `https://i.pravatar.cc/50?img=3`,
-  ],
+  imageUrls: ['/pics/mila/1.jpeg'],
   name: 'Mila',
   title: '',
   age: 24,
