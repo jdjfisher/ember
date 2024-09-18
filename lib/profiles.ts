@@ -256,7 +256,7 @@ const victor: Profile = {
 
 const jacob: Profile = {
   id: 112,
-  imageUrls: ['https://i.pravatar.cc/700?img=1'],
+  imageUrls: ['/pics/jacob/1.jpg'],
   name: 'Jacob',
   title: '',
   age: 32,
