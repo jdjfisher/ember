@@ -277,6 +277,7 @@ export const authUser = hugo;
 
 export const chatProfiles: Profile[] = [
   hussain,
+  mila,
   victor,
   jacques,
   bella,
@@ -284,7 +285,6 @@ export const chatProfiles: Profile[] = [
   michelle,
   ed,
   jacob,
-  mila,
 ];
 
 export const profilesToSwipe: Profile[] = [
