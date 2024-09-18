@@ -9,12 +9,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { Message as MessageT } from '@/types';
+import useWindowHeight from '@/hooks/useWindowHeight';
 import Typing from '@/components/chats/Typing';
 import classNames from 'classnames';
 import ProfileIcon from '@/components/ProfileIcon';
 
 export default function Chat({ params }: any) {
   const id = Number(params?.id);
+
+  const windowHeight = useWindowHeight();
 
   const profile = allProfiles.find((profile) => profile.id == id)!;
 
@@ -83,7 +86,7 @@ export default function Chat({ params }: any) {
   }, [scriptIndex]);
 
   return (
-    <div className="relative h-full">
+    <div className="relative" style={{ height: windowHeight ?? '100%' }}>
       <div
         className={classNames('flex flex-col h-full transition-[filter]', { 'blur-sm': unmatched })}
       >
