@@ -12,16 +12,15 @@ export default function Profile({ params }: any) {
   const profile = chatProfiles.find((profile) => profile.id == id)!;
 
   return (
-    <div className="space-y-2 p-3">
-      <div className="flex items-center gap-4">
+    <div>
+      <div className="flex justify-between items-center gap-4 h-14 p-4 shadow-sm">
         <Link href="/">
           <BiArrowBack size={24} />
         </Link>
 
-        <BsThreeDots size={24} className="ml-auto" />
+        <BsThreeDots size={24} />
       </div>
 
-      <hr />
       <div className="p-5">
         <ProfileDetail profile={profile} />
       </div>
