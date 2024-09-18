@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEventHandler, useState } from 'react';
+import { FormEventHandler, useRef, useState } from 'react';
 import { IoMdSend } from 'react-icons/io';
 
 interface Props {
@@ -9,9 +9,11 @@ interface Props {
 
 export default function MessageForm({ onMessage }: Props) {
   const [text, setText] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const onSubmit: FormEventHandler = (e) => {
     e.preventDefault();
+    inputRef.current?.focus();
 
     if (!text) {
       return;
@@ -24,6 +26,7 @@ export default function MessageForm({ onMessage }: Props) {
   return (
     <form className="flex items-center gap-2" onSubmit={onSubmit}>
       <input
+        ref={inputRef}
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
