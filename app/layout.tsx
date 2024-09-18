@@ -1,5 +1,6 @@
 import { Viewport } from 'next';
 import './globals.css';
+import SplashScreen from '@/components/SplashScreen';
 
 export const metadata = {
   title: 'Ember',
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: Props) {
         {/* Hide overflow to disable pull-to-refresh */}
         <main className="h-full max-h-[60rem] flex flex-col relative overflow-hidden bg-white shadow-2xl">
           {children}
+          <SplashScreen />
         </main>
       </body>
     </html>
