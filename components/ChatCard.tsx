@@ -27,7 +27,7 @@ export default function ChatCard({ profile }: Props) {
 
   return (
     <Link href={`/chats/${profile.id}`} className="flex items-center gap-4 px-5 py-3">
-      <ProfileIcon profile={profile} size={64} />
+      <ProfileIcon profile={profile} size={56} />
 
       <div className="w-full">
         <div className="font-bold">{profile.name}</div>
