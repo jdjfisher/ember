@@ -90,7 +90,7 @@ export default function Chat({ params }: any) {
       <div
         className={classNames('flex flex-col h-full transition-[filter]', { 'blur-sm': unmatched })}
       >
-        <div className="flex items-center gap-4 sticky top-0 bg-white shadow-sm p-4 h-16">
+        <div className="flex items-center gap-4 sticky top-0 bg-white shadow-sm p-4 h-14">
           <Link href="/chats">
             <BiArrowBack size={24} />
           </Link>

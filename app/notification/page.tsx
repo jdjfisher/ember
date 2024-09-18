@@ -48,7 +48,7 @@ export default function FakeNotification() {
 
     setTimeout(async () => {
       await registration.showNotification(sender.concat(' sent you a new message'), {
-        icon: '/icons/logo.png',
+        icon: '/icons/logo_red.png',
       });
 
       setSender('');

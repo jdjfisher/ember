@@ -9,21 +9,11 @@ interface Props {
 }
 
 export default function TabLayout({ children }: Props) {
-  function refresh() {
-    window.location.reload();
-  }
-
   return (
     <>
-      <section className="grid grid-cols-3 items-center p-3 shadow-sm h-16">
-        <h1 className="select-none text-center col-start-2 text-lg font-bold text-[#EE1F4D] items-start">
-          <button type="button" onClick={refresh}>
-            Ember
-          </button>
-        </h1>
-
-        <Link href="notification" className=" ml-auto">
-          <Image src="/icons/logo.png" alt="logo" width={35} height={35} />
+      <section className="flex justify-center items-center p-3 shadow-sm h-14">
+        <Link href="notification">
+          <Image src="/icons/logo_with_text.png" alt="Ember" width={128} height={128} />
         </Link>
       </section>
 
