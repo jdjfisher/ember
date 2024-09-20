@@ -1,9 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 1900);
+  }, []);
 
   if (!isVisible) {
     return null;
