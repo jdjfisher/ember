@@ -34,15 +34,18 @@ export default function Chat({ params }: any) {
   function addMessage(message: MessageT) {
     setMessages([...messages, message]);
     setScriptIndex(scriptIndex + 1);
-
-    // Scroll to the bottom of the chat
-    if (chatBodyRef.current) {
-      chatBodyRef.current.scrollTo({
-        top: chatBodyRef.current.scrollHeight,
-        behavior: 'smooth',
-      });
-    }
   }
+
+  function scrollToBottom() {
+    chatBodyRef.current!.scrollTo({
+      top: chatBodyRef.current!.scrollHeight,
+      behavior: 'smooth',
+    });
+  }
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   function onMessage(message: string) {
     addMessage({ text: message, sentByYou: true });
