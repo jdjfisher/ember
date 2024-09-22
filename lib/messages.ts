@@ -29,7 +29,7 @@ export const hussainMessages: ScriptedMessageThread = [
   { type: 'delay', duration: 1000, typing: true },
   {
     type: 'message',
-    text: 'Unflitered ;)',
+    text: 'Unfiltered ;)',
   },
 ];
 
