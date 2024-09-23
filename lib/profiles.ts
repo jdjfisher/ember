@@ -9,16 +9,12 @@ const hugo: Profile = {
   age: 28,
   livesIn: 'London',
   interests: ['Food', 'Nightlife', 'History', 'Travel'],
-  aboutMe: 'A painting is worth a 1000 words -- \n Match for the real thing.',
+  aboutMe: 'A painting is worth 1000 words -- \n Match for the real thing.',
 };
 
 const hussain: Profile = {
   id: 1,
-  imageUrls: [
-    `https://i.pravatar.cc/700?img=1`,
-    `https://i.pravatar.cc/200?img=2`,
-    `https://i.pravatar.cc/50?img=3`,
-  ],
+  imageUrls: ['/pics/hussain/1.jpeg'],
   name: 'Hussain',
   title: '',
   age: 25,
@@ -237,7 +233,7 @@ const sarah: Profile = {
 
 const victor: Profile = {
   id: 111,
-  imageUrls: ['https://i.pravatar.cc/700?img=1'],
+  imageUrls: ['/pics/victor/1.JPG'],
   name: 'Victor',
   title: '',
   age: 32,
