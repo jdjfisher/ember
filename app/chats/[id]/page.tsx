@@ -9,7 +9,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { Message as MessageT } from '@/types';
-import useWindowHeight from '@/hooks/useWindowHeight';
+import { useKeyboardResize } from '@/hooks/useKeyboardHeight';
 import Typing from '@/components/chats/Typing';
 import classNames from 'classnames';
 import ProfileIcon from '@/components/ProfileIcon';
@@ -17,7 +17,7 @@ import ProfileIcon from '@/components/ProfileIcon';
 export default function Chat({ params }: any) {
   const id = Number(params?.id);
 
-  const windowHeight = useWindowHeight();
+  const viewportHeight = useKeyboardResize();
 
   const profile = allProfiles.find((profile) => profile.id == id)!;
 
@@ -89,9 +89,11 @@ export default function Chat({ params }: any) {
   }, [scriptIndex]);
 
   return (
-    <div className="relative" style={{ height: windowHeight ?? '100%' }}>
+    <div className="relative" style={{ height: viewportHeight ?? '100%' }}>
       <div
-        className={classNames('flex flex-col h-full transition-[filter]', { 'blur-sm': unmatched })}
+        className={classNames('flex flex-col h-full transition-[filter]', {
+          'blur-sm': unmatched,
+        })}
       >
         <div className="flex items-center gap-4 sticky top-0 bg-white shadow-sm p-4 h-14">
           <Link href="/chats">
@@ -104,7 +106,7 @@ export default function Chat({ params }: any) {
           <Link href={`/profiles/${profile.id}`}>
             <h2>{profile.name}</h2>
           </Link>
-          <BsThreeDots size={24} className="ml-auto" />
+          <BsThreeDots size={24} className="ml-auto" onClick={() => window.location.reload()} />
         </div>
 
         <div className="flex-1 space-y-2 overflow-y-auto p-4 pb-16" ref={chatBodyRef}>
