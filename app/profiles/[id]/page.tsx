@@ -1,15 +1,15 @@
 'use client';
 
-import { chatProfiles } from '@/lib/profiles';
+import { allProfiles } from '@/lib/profiles';
 import { ProfileDetail } from '@/components/ProfileDetail';
 import { BiArrowBack } from 'react-icons/bi';
 import { BsThreeDots } from 'react-icons/bs';
 import Link from 'next/link';
 
 export default function Profile({ params }: any) {
-  const id = params?.id;
+  const id = Number(params?.id);
 
-  const profile = chatProfiles.find((profile) => profile.id == id)!;
+  const profile = allProfiles.find((profile) => profile.id === id)!;
 
   return (
     <div>
