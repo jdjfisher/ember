@@ -60,6 +60,9 @@ export default function Chat({ params }: any) {
 
     if (currentScriptAction === 'unmatch') {
       setUnmatch(true);
+      // Close the keyboard
+      // @ts-ignore
+      document.activeElement?.blur();
       return;
     }
 
