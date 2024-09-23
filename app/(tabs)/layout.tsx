@@ -11,7 +11,7 @@ interface Props {
 export default function TabLayout({ children }: Props) {
   return (
     <>
-      <section className="flex justify-center items-center p-3 shadow-sm h-14">
+      <section className="flex justify-center items-center p-3 shadow-sm h-14 bg-white">
         <Link href="notification">
           <Image src="/icons/logo_with_text.png" alt="Ember" width={128} height={128} />
         </Link>
