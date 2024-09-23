@@ -72,9 +72,9 @@ export function ProfileDetail({ profile }: Props) {
         <h1 className="font-bold">Interests</h1>
       </div>
 
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {profile.interests.map((item) => (
-          <div className="rounded-md border-2 py-1 px-2" key={item}>
+          <div className="rounded-md border-2 py-1 px-2 whitespace-nowrap" key={item}>
             {item}
           </div>
         ))}
