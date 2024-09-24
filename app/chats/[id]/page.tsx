@@ -6,13 +6,13 @@ import { BiArrowBack } from 'react-icons/bi';
 import { BsThreeDots } from 'react-icons/bs';
 import { allProfiles } from '@/lib/profiles';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { Message as MessageT } from '@/types';
 import { useKeyboardResize } from '@/hooks/useKeyboardHeight';
 import Typing from '@/components/chats/Typing';
 import classNames from 'classnames';
 import ProfileIcon from '@/components/ProfileIcon';
+import Unmatched from '@/components/Unmatched';
 
 export default function Chat({ params }: any) {
   const id = Number(params?.id);
@@ -124,20 +124,7 @@ export default function Chat({ params }: any) {
         </section>
       </div>
 
-      <div
-        className={classNames(
-          'absolute flex items-center justify-center top-0 left-0 h-full w-full',
-          { hidden: !unmatched }
-        )}
-      >
-        <Image
-          src="/pics/unmatched.png"
-          alt="Unmatch"
-          width={350}
-          height={350}
-          onClick={() => setUnmatch(false)}
-        />
-      </div>
+      {unmatched && <Unmatched />}
     </div>
   );
 }

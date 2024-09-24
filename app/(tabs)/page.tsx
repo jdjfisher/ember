@@ -31,7 +31,7 @@ export default function Home() {
         </div>
       </div>
 
-      {match && <Matched match={match} clearMatch={() => setMatch(undefined)} />}
+      {match && <Matched clearMatch={() => setMatch(undefined)} />}
     </div>
   );
 }
