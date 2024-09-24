@@ -37,8 +37,10 @@ export const hussainMessages: ScriptedMessageThread = [
 ];
 
 export const milaMessages: ScriptedMessageThread = [
-  { type: 'delay', duration: 10000, typing: false },
+  { type: 'delay', duration: 9000, typing: false },
+  { type: 'delay', duration: 1500, typing: true },
   { type: 'message', text: "I don't want anything too serious", timestamp: 'Today', picture: true },
+  { type: 'delay', duration: 2000, typing: true },
   { type: 'message', text: "Don't want commitment :)" },
   'prompt',
   { type: 'delay', duration: 2500, typing: true },
