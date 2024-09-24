@@ -4,9 +4,7 @@ import { useState, useEffect } from 'react';
 export const useKeyboardResize = () => {
   const [keyboardOpen, setKeyboardOpen] = useState(false);
 
-  const [viewportHeight, setViewportHeight] = useState(
-    typeof window !== 'undefined' ? window.innerHeight : 0
-  );
+  const [viewportHeight, setViewportHeight] = useState<number | undefined>(undefined);
 
   function scrollToTop() {
     window.scroll({
