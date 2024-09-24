@@ -151,6 +151,11 @@ const ed: Profile = {
       picture: true,
     },
     'prompt',
+    {
+      type: 'delay',
+      duration: 1000,
+      typing: false,
+    },
     'unmatch',
   ],
 };
