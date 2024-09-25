@@ -22,16 +22,21 @@ export default function Animation({ assetsId, data, onEnd }: Props) {
       assetsPath: `/animations/${assetsId}/images/`,
     });
 
-    if (onEnd) {
-      animation.addEventListener('complete', onEnd);
-    }
+    animation.addEventListener('complete', () => {
+      console.debug('Animation completed');
+      if (onEnd) {
+        onEnd();
+      }
+    });
 
     animation.addEventListener('error', console.error);
 
     return () => {
+      console.debug('Destroying animation');
       animation.destroy();
     };
-  }, [assetsId, data, onEnd]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [assetsId, data]);
 
   return <div ref={playerRef}> </div>;
 }
