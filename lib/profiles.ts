@@ -176,6 +176,7 @@ const bella: Profile = {
       timestamp: 'Yesterday',
       picture: true,
     },
+    ...Array(50).fill('prompt'),
   ],
 };
 

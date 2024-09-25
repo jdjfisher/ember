@@ -13,7 +13,10 @@ export default function MessageForm({ onMessage }: Props) {
 
   const onSubmit: FormEventHandler = (e) => {
     e.preventDefault();
-    inputRef.current?.focus();
+
+    setTimeout(() => {
+      inputRef.current?.focus({ preventScroll: true });
+    }, 0);
 
     if (!text) {
       return;
