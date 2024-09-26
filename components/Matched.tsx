@@ -11,8 +11,17 @@ interface Props {
 export default function Matched({ clearMatch }: Props) {
   const [animationFinished, setAnimationFinished] = useState(false);
 
+  function onClick() {
+    if (animationFinished) {
+      clearMatch();
+    }
+  }
+
   return (
-    <div className="absolute backdrop-blur-sm top-0 w-full h-full flex flex-col gap-4 justify-center items-center z-10 left-0">
+    <div
+      className="absolute backdrop-blur-sm top-0 w-full h-full flex flex-col gap-4 justify-center items-center z-10 left-0"
+      onClick={onClick}
+    >
       <Animation assetsId="match" data={animationData} onEnd={() => setAnimationFinished(true)} />
     </div>
   );

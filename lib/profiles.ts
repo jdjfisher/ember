@@ -18,7 +18,7 @@ const hussain: Profile = {
   name: 'Hussain',
   title: '',
   age: 25,
-  swipedRight: true,
+  swipedRight: false,
   livesIn: 'London',
   distance: 5,
   interests: ['i', 'd', 'k'],
@@ -102,7 +102,7 @@ const chanel: Profile = {
   interests: ['Travel', 'Food', 'Skiing', 'Cocktails'],
   aboutMe:
     "Red flag: don't bother if you've never left Europe \n Travel expert \n Let me broaden your horizons 💅",
-  swipedRight: true,
+  swipedRight: false,
 };
 
 const alfonso: Profile = {
