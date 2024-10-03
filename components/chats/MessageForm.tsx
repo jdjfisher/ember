@@ -10,6 +10,9 @@ interface Props {
 export default function MessageForm({ onMessage }: Props) {
   const [text, setText] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const capitalizeFirstLetter = (text: string) => {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  };
 
   const onSubmit: FormEventHandler = (e) => {
     e.preventDefault();
@@ -30,7 +33,7 @@ export default function MessageForm({ onMessage }: Props) {
         ref={inputRef}
         type="text"
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e) => setText(capitalizeFirstLetter(e.target.value))}
         className="w-full rounded-xl border-2 border-red-200 p-2"
         placeholder="Send a message..."
       />
