@@ -14,9 +14,7 @@ export default function MessageForm({ onMessage }: Props) {
   const onSubmit: FormEventHandler = (e) => {
     e.preventDefault();
 
-    setTimeout(() => {
-      inputRef.current?.focus({ preventScroll: true });
-    }, 0);
+    inputRef.current?.focus({ preventScroll: true });
 
     if (!text) {
       return;
