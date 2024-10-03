@@ -3,7 +3,7 @@ import { hussainMessages, milaMessages } from './messages';
 
 const hugo: Profile = {
   id: 0,
-  imageUrls: ['https://i.pravatar.cc/700?img=69', 'https://i.pravatar.cc/700?img=68'],
+  imageUrls: ['/pics/hugo/1.JPG'],
   name: 'Hugo',
   title: '',
   age: 28,
@@ -29,11 +29,12 @@ const hussain: Profile = {
 export const amelia: Profile = {
   id: 2,
   imageUrls: [
-    '/pics/amelia/1.jpg',
+    '/pics/amelia/1.JPG',
     '/pics/amelia/2.jpg',
     '/pics/amelia/3.jpg',
     '/pics/amelia/4.jpg',
     '/pics/amelia/5.jpg',
+    '/pics/amelia/6.jpg',
   ],
   name: 'Amelia',
   title: '',
