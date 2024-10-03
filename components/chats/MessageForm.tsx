@@ -10,6 +10,7 @@ interface Props {
 export default function MessageForm({ onMessage }: Props) {
   const [text, setText] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+
   const capitalizeFirstLetter = (text: string) => {
     return text.charAt(0).toUpperCase() + text.slice(1);
   };

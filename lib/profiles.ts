@@ -29,7 +29,7 @@ const hussain: Profile = {
 export const amelia: Profile = {
   id: 2,
   imageUrls: [
-    '/pics/amelia/1.JPG',
+    '/pics/amelia/1.jpg',
     '/pics/amelia/2.jpg',
     '/pics/amelia/3.jpg',
     '/pics/amelia/4.jpg',
