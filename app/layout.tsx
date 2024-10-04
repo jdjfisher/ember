@@ -34,7 +34,7 @@ export default function RootLayout({ children }: Props) {
         {/* Hide overflow to disable pull-to-refresh */}
         <main
           className={classNames(
-            'h-full max-h-[60rem] flex flex-col relative overflow-hidden bg-[#FCFCFC] shadow-2xl md:rounded-3xl transition-[filter] delay-500 duration-500',
+            'h-full max-h-[60rem] flex flex-col relative overflow-hidden bg-[#FCFCFC] shadow-2xl md:rounded-3xl transition-[filter] delay-100 duration-500',
             { 'blur-sm': blurred }
           )}
         >

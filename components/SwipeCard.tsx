@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import { Profile } from '@/types';
 import { ProfileCard } from './ProfileCard';
+import { useBlurStore } from '@/store/blur';
 
 const TinderCard = dynamic(() => import('react-tinder-card'), {
   ssr: false,
@@ -15,6 +16,8 @@ interface Props {
 }
 
 export default function SwipeCard({ profile, onSwipe, onMatch }: Props) {
+  const blur = useBlurStore((state) => state.blur);
+
   function handleSwipe(direction: string) {
     onSwipe();
 
@@ -24,7 +27,10 @@ export default function SwipeCard({ profile, onSwipe, onMatch }: Props) {
 
     switch (direction) {
       case 'right':
-        onMatch(profile);
+        blur();
+        setTimeout(() => {
+          onMatch(profile);
+        }, 500);
         break;
       case 'left':
         break;

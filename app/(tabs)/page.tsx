@@ -4,20 +4,10 @@ import { ProfileCard } from '@/components/ProfileCard';
 import SwipeCard from '@/components/SwipeCard';
 import { profilesToSwipe } from '@/lib/profiles';
 import { Profile } from '@/types';
-import { useEffect, useState } from 'react';
-import { useBlurStore } from '@/store/blur';
+import { useState } from 'react';
 
 export default function Home() {
   const [match, setMatch] = useState<Profile>();
-
-  const blur = useBlurStore((state) => state.blur);
-
-  useEffect(() => {
-    if (match) {
-      blur();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [match]);
 
   return (
     <div className="h-full p-5">
