@@ -1,28 +1,12 @@
-'use client';
-
-import { useState } from 'react';
-import Animation from './Animation';
-import animationData from '@/public/animations/match/data.json';
-
 interface Props {
-  clearMatch: () => void;
+  clear: () => void;
 }
 
-export default function Matched({ clearMatch }: Props) {
-  const [animationFinished, setAnimationFinished] = useState(false);
-
-  function onClick() {
-    if (animationFinished) {
-      clearMatch();
-    }
-  }
-
+export default function Matched({ clear }: Props) {
   return (
     <div
-      className="absolute backdrop-blur-sm top-0 w-full h-full flex flex-col gap-4 justify-center items-center z-10 left-0"
-      onClick={onClick}
-    >
-      <Animation assetsId="match" data={animationData} onEnd={() => setAnimationFinished(true)} />
-    </div>
+      className={'absolute backdrop-blur-sm top-0 w-full h-full z-10 left-0'}
+      onClick={() => clear()}
+    />
   );
 }

@@ -12,7 +12,6 @@ import { useKeyboardResize } from '@/hooks/useKeyboardHeight';
 import Typing from '@/components/chats/Typing';
 import classNames from 'classnames';
 import ProfileIcon from '@/components/ProfileIcon';
-import Unmatched from '@/components/Unmatched';
 
 export default function Chat({ params }: any) {
   const id = Number(params?.id);
@@ -123,8 +122,6 @@ export default function Chat({ params }: any) {
           <MessageForm onMessage={onMessage} />
         </section>
       </div>
-
-      {unmatched && <Unmatched />}
     </div>
   );
 }
