@@ -10,8 +10,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Message as MessageT } from '@/types';
 import { useKeyboardResize } from '@/hooks/useKeyboardHeight';
 import Typing from '@/components/chats/Typing';
-import classNames from 'classnames';
 import ProfileIcon from '@/components/ProfileIcon';
+import { useBlurStore } from '@/store/blur';
 
 export default function Chat({ params }: any) {
   const id = Number(params?.id);
@@ -20,7 +20,7 @@ export default function Chat({ params }: any) {
 
   const profile = allProfiles.find((profile) => profile.id == id)!;
 
-  const [unmatched, setUnmatch] = useState(false);
+  const blur = useBlurStore((state) => state.blur);
 
   const [scriptIndex, setScriptIndex] = useState(0);
 
@@ -58,7 +58,7 @@ export default function Chat({ params }: any) {
     }
 
     if (currentScriptAction === 'unmatch') {
-      setUnmatch(true);
+      blur();
       // Close the keyboard
       // @ts-ignore
       document.activeElement?.blur();
@@ -92,11 +92,7 @@ export default function Chat({ params }: any) {
 
   return (
     <div className="relative" style={{ height: viewportHeight ?? '100%' }}>
-      <div
-        className={classNames('flex flex-col h-full transition-[filter]', {
-          'blur-sm': unmatched,
-        })}
-      >
+      <div className="flex flex-col h-full">
         <div className="flex items-center gap-4 sticky top-0 bg-white shadow-sm p-4 h-14">
           <Link href="/chats">
             <BiArrowBack size={24} />

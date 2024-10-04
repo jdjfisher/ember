@@ -4,17 +4,26 @@ import { ProfileCard } from '@/components/ProfileCard';
 import SwipeCard from '@/components/SwipeCard';
 import { profilesToSwipe } from '@/lib/profiles';
 import { Profile } from '@/types';
-import Matched from '@/components/Matched';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useBlurStore } from '@/store/blur';
 
 export default function Home() {
   const [match, setMatch] = useState<Profile>();
+
+  const blur = useBlurStore((state) => state.blur);
+
+  useEffect(() => {
+    if (match) {
+      blur();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [match]);
 
   return (
     <div className="h-full p-5">
       <div className="relative h-full overflow-hidden rounded-3xl">
         {match ? (
-          <ProfileCard profile={match} className="opacity-10" />
+          <ProfileCard profile={match} />
         ) : (
           profilesToSwipe.map((profile) => (
             <SwipeCard
@@ -30,8 +39,6 @@ export default function Home() {
           <p>No more profiles to swipe!</p>
         </div>
       </div>
-
-      {match && <Matched clear={() => setMatch(undefined)} />}
     </div>
   );
 }

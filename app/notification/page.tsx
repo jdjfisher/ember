@@ -1,5 +1,6 @@
 'use client';
 
+import { useBlurStore } from '@/store/blur';
 import { useEffect, useState } from 'react';
 
 export default function FakeNotification() {
@@ -7,6 +8,9 @@ export default function FakeNotification() {
 
   const [delay, setDelay] = useState(0);
   const [sending, setSending] = useState(false);
+
+  const blurred = useBlurStore((state) => state.blurred);
+  const unblur = useBlurStore((state) => state.unblur);
 
   useEffect(() => {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
@@ -53,6 +57,13 @@ export default function FakeNotification() {
       setSending(false);
     }, delay * 1000);
   };
+
+  useEffect(() => {
+    if (blurred) {
+      unblur();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [blurred]);
 
   return (
     <div className="space-y-5 p-5">
